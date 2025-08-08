@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prüfungsstrategien - Spanisch Abitur 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        .nav-breadcrumb {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .strategy-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .strategy-section h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .strategy-section h2 .icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+
+        .strategy-section h3 {
+            color: #34495e;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(116, 185, 255, 0.3);
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .strategy-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 20px;
+            border-left: 5px solid #e74c3c;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .strategy-card h4 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .strategy-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .strategy-list li {
+            background: rgba(255, 255, 255, 0.8);
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #27ae60;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .strategy-list li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        .warning-box h4 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .warning-box h4:before {
+            content: "⚠️";
+            margin-right: 10px;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #55a3ff, #003d82);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(85, 163, 255, 0.3);
+        }
+
+        .tip-box h4 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .tip-box h4:before {
+            content: "💡";
+            margin-right: 10px;
+        }
+
+        .time-schedule {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(255, 234, 167, 0.4);
+        }
+
+        .time-schedule h4 {
+            color: #2d3436;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .time-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 12px 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .time-item .time {
+            font-weight: bold;
+            color: #d63031;
+            font-size: 1.1em;
+        }
+
+        .checklist {
+            background: linear-gradient(135deg, #a8e6cf, #7fcdcd);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(168, 230, 207, 0.4);
+        }
+
+        .checklist h4 {
+            color: #2d3436;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 12px 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .checkbox-item:hover {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 15px;
+            transform: scale(1.3);
+        }
+
+        .common-mistakes {
+            background: linear-gradient(135deg, #ff9ff3, #f368e0);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(255, 159, 243, 0.3);
+        }
+
+        .common-mistakes h4 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .mistake-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border-left: 4px solid #fff;
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .strategy-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .time-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Prüfungsstrategien</h1>
+            <p>Bewährte Strategien und Tipps für eine erfolgreiche Spanisch-Abiturprüfung</p>
+        </div>
+
+        <div class="nav-breadcrumb">
+            <a href="index.html">🏠 Startseite</a> > 
+            <strong>Prüfungsstrategien</strong>
+        </div>
+
+        <!-- Allgemeine Prüfungsvorbereitung -->
+        <div class="strategy-section">
+            <h2><span class="icon">📚</span>Allgemeine Prüfungsvorbereitung</h2>
+            
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Langfristige Vorbereitung (6-12 Monate)</h4>
+                    <ul class="strategy-list">
+                        <li>Erstellen Sie einen strukturierten Lernplan mit wöchentlichen Zielen</li>
+                        <li>Lernen Sie die unregelmäßigen Verben systematisch auswendig</li>
+                        <li>Üben Sie ser/estar-Unterscheidungen täglich mit praktischen Beispielen</li>
+                        <li>Beherrschen Sie die Objektpronomen-Stellung durch wiederholte Übungen</li>
+                        <li>Wiederholen Sie die Zeitenbildung regelmäßig mit Verbtabellen</li>
+                        <li>Prägen Sie sich Fragewörter und Konjunktionen systematisch ein</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Mittelfristige Vorbereitung (2-6 Monate)</h4>
+                    <ul class="strategy-list">
+                        <li>Erstellen Sie Karteikarten für komplexe Verbtabellen</li>
+                        <li>Üben Sie mit authentischen spanischen Texten verschiedener Schwierigkeitsgrade</li>
+                        <li>Schreiben Sie eigene Beispielsätze für jede Grammatikregel</li>
+                        <li>Lesen Sie regelmäßig spanische Zeitungen (El País, ABC)</li>
+                        <li>Hören Sie spanische Musik und Podcasts zur Verbesserung des Sprachgefühls</li>
+                        <li>Schauen Sie spanische Filme mit Untertiteln</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Kurzfristige Vorbereitung (letzte Wochen)</h4>
+                    <ul class="strategy-list">
+                        <li>Fokus auf häufige Fehlerquellen und Schwachstellen</li>
+                        <li>Intensives Training der Prüfungsformate</li>
+                        <li>Simulation von Prüfungssituationen unter Zeitdruck</li>
+                        <li>Wiederholung der wichtigsten Eselsbrücken und Merkhilfen</li>
+                        <li>Entspannungstechniken und Stressmanagement üben</li>
+                        <li>Gesunde Ernährung und ausreichend Schlaf</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>Profi-Tipp für Langzeitvorbereitung</h4>
+                <p>Verwenden Sie die <strong>Pomodoro-Technik</strong>: 25 Minuten konzentriert lernen, dann 5 Minuten Pause. Nach 4 Einheiten eine längere Pause von 15-30 Minuten. Dies verbessert die Konzentration und verhindert Ermüdung.</p>
+            </div>
+        </div>
+
+        <!-- Zeitmanagement -->
+        <div class="strategy-section">
+            <h2><span class="icon">⏰</span>Zeitmanagement in der Prüfung</h2>
+            
+            <h3>Schriftliche Prüfung - Zeitaufteilung (240 Minuten)</h3>
+            <div class="time-schedule">
+                <h4>Empfohlene Zeitaufteilung für eine 4-stündige Klausur:</h4>
+                <div class="time-item">
+                    <span>Aufgaben durchlesen und Strategie planen</span>
+                    <span class="time">15 Min</span>
+                </div>
+                <div class="time-item">
+                    <span>Textverständnis und Analyse</span>
+                    <span class="time">60 Min</span>
+                </div>
+                <div class="time-item">
+                    <span>Textproduktion (z.B. Resumen)</span>
+                    <span class="time">45 Min</span>
+                </div>
+                <div class="time-item">
+                    <span>Hauptaufgabe (Comentario/Análisis)</span>
+                    <span class="time">90 Min</span>
+                </div>
+                <div class="time-item">
+                    <span>Grammatik und Wortschatz</span>
+                    <span class="time">15 Min</span>
+                </div>
+                <div class="time-item">
+                    <span>Überprüfung und Korrektur</span>
+                    <span class="time">15 Min</span>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h4>Wichtige Zeitmanagement-Regeln</h4>
+                <ul>
+                    <li><strong>Niemals</strong> mehr als die geplante Zeit für eine Aufgabe verwenden</li>
+                    <li>Schwierige Aufgaben markieren und später wiederkommen</li>
+                    <li>Immer Zeit für Korrektur einplanen</li>
+                    <li>Bei Zeitnot: Lieber vollständige Antworten als perfekte Details</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Klausurtechniken -->
+        <div class="strategy-section">
+            <h2><span class="icon">✍️</span>Klausurtechniken</h2>
+            
+            <h3>Strategisches Vorgehen bei Textaufgaben</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>1. Erste Lesung (5 Minuten)</h4>
+                    <ul class="strategy-list">
+                        <li>Text einmal komplett durchlesen ohne zu markieren</li>
+                        <li>Globales Verständnis entwickeln</li>
+                        <li>Textart und Thema identifizieren</li>
+                        <li>Schwierige Passagen mental markieren</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>2. Arbeitslesung (10-15 Minuten)</h4>
+                    <ul class="strategy-list">
+                        <li>Text in Abschnitte gliedern</li>
+                        <li>Schlüsselwörter und wichtige Argumente markieren</li>
+                        <li>Unbekannte Wörter aus dem Kontext erschließen</li>
+                        <li>Randnotizen mit eigenen Worten machen</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>3. Aufgabenbezogene Analyse</h4>
+                    <ul class="strategy-list">
+                        <li>Aufgabenstellung gründlich lesen und verstehen</li>
+                        <li>Operatoren identifizieren (analizar, comentar, resumir)</li>
+                        <li>Relevante Textstellen für jede Aufgabe finden</li>
+                        <li>Antwortstruktur vor dem Schreiben planen</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Spezifische Techniken für verschiedene Aufgabentypen</h3>
+            
+            <div class="strategy-card">
+                <h4>Resumen schreiben</h4>
+                <ul class="strategy-list">
+                    <li><strong>Länge beachten:</strong> Meist 1/3 der ursprünglichen Textlänge</li>
+                    <li><strong>Hauptideen extrahieren:</strong> Nur die wichtigsten Argumente verwenden</li>
+                    <li><strong>Eigene Worte verwenden:</strong> Nicht wortwörtlich aus dem Text kopieren</li>
+                    <li><strong>Chronologische Struktur:</strong> Reihenfolge der Originalargumente beibehalten</li>
+                    <li><strong>Objektiv bleiben:</strong> Keine eigene Meinung einbringen</li>
+                    <li><strong>Konnektoren verwenden:</strong> por tanto, sin embargo, además, por último</li>
+                </ul>
+            </div>
+
+            <div class="strategy-card">
+                <h4>Análisis de texto</h4>
+                <ul class="strategy-list">
+                    <li><strong>Struktur analysieren:</strong> Einleitung, Hauptteil, Schluss identifizieren</li>
+                    <li><strong>Stilmittel erkennen:</strong> Metaphern, Ironie, Rhetorik fragen</li>
+                    <li><strong>Argumentationsweise:</strong> Logik, Beispiele, Autoritätsargumente</li>
+                    <li><strong>Sprachliche Besonderheiten:</strong> Register, Wortwahl, Satzbau</li>
+                    <li><strong>Autorenabsicht:</strong> Ziel und Zielgruppe des Textes</li>
+                    <li><strong>Textbelege zitieren:</strong> Immer mit Zeilennummern</li>
+                </ul>
+            </div>
+
+            <div class="strategy-card">
+                <h4>Comentario personal</h4>
+                <ul class="strategy-list">
+                    <li><strong>Klare Position beziehen:</strong> Eigene Meinung deutlich formulieren</li>
+                    <li><strong>Argumente strukturieren:</strong> Pro und Contra systematisch abwägen</li>
+                    <li><strong>Beispiele verwenden:</strong> Persönliche oder gesellschaftliche Erfahrungen</li>
+                    <li><strong>Bezug zum Text:</strong> Verbindung zur ursprünglichen Argumentation</li>
+                    <li><strong>Schlussfolgerung ziehen:</strong> Eigene Position am Ende bekräftigen</li>
+                    <li><strong>Höflich formulieren:</strong> En mi opinión, creo que, me parece que</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Häufige Fehler -->
+        <div class="strategy-section">
+            <h2><span class="icon">❌</span>Häufige Fehler vermeiden</h2>
+            
+            <div class="common-mistakes">
+                <h4>Die 10 häufigsten Abitur-Fehler und wie Sie sie vermeiden:</h4>
+                
+                <div class="mistake-item">
+                    <strong>1. Falsche Artikel:</strong> la problema → <strong>el problema</strong><br>
+                    <em>Tipp:</em> Substantive auf -ma sind meist maskulin (das System, el problema, el tema)
+                </div>
+                
+                <div class="mistake-item">
+                    <strong>2. Ser/Estar verwechselt:</strong> Soy en casa → <strong>Estoy en casa</strong><br>
+                    <em>Merkhilfe:</em> SER = dauerhaft/Eigenschaften, ESTAR = vorübergehend/Orte
+                </div>
+                
+                <div class="mistake-item">
+                    <strong>3. Fehlende Präposition a:</strong> Veo María → <strong>Veo a María</strong><br>
+                    <em>Regel:</em> Direktes Objekt bei Personen braucht immer "a"
+                </div>
+                
+                <div class="mistake-item">
+                    <strong>4. Falsche Pronomenstellung:</strong> Quiero lo → <strong>Lo quiero</strong><br>
+                    <em>Regel:</em> Objektpronomen stehen vor dem konjugierten Verb
+                </div>
+                
+                <div class="mistake-item">
+                    <strong>5. Género vergessen:</strong> uno chica → <strong>una chica</strong><br>
+                    <em>Tipp:</em> Adjektive und Artikel müssen mit dem Substantiv übereinstimmen
+                </div>
+            </div>
+
+            <h3>Strategien zur Fehlervermeidung</h3>
+            <ul class="strategy-list">
+                <li>Lesen Sie Aufgaben und Ihre Antworten immer zweimal durch</li>
+                <li>Achten Sie besonders auf Genus und Numerus bei Adjektiven</li>
+                <li>Prüfen Sie Verbkonjugationen systematisch (Person, Zeit, Modus)</li>
+                <li>Verwenden Sie nur Strukturen, die Sie sicher beherrschen</li>
+                <li>Lassen Sie komplexe Konstruktionen weg, wenn Sie unsicher sind</li>
+                <li>Markieren Sie problematische Stellen und überprüfen Sie diese extra</li>
+            </ul>
+        </div>
+
+        <!-- Mündliche Prüfung -->
+        <div class="strategy-section">
+            <h2><span class="icon">🗣️</span>Mündliche Prüfung</h2>
+            
+            <h3>Vorbereitung auf die mündliche Prüfung</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Vorbereitungszeit nutzen (ca. 20 Minuten)</h4>
+                    <ul class="strategy-list">
+                        <li>Text/Material gründlich durcharbeiten</li>
+                        <li>Stichpunkte und Schlüsselwörter notieren</li>
+                        <li>Struktur der Präsentation planen</li>
+                        <li>Mögliche Fragen antizipieren</li>
+                        <li>Schwierige Vokabeln herausschreiben</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Präsentationsteil (5-10 Minuten)</h4>
+                    <ul class="strategy-list">
+                        <li>Klar strukturierte Einleitung</li>
+                        <li>Hauptpunkte logisch aufbauen</li>
+                        <li>Konkrete Beispiele verwenden</li>
+                        <li>Persönliche Stellungnahme integrieren</li>
+                        <li>Schlussfolgerung ziehen</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Gespräch mit dem Prüfer</h4>
+                    <ul class="strategy-list">
+                        <li>Aktiv zuhören und nachfragen bei Unklarheiten</li>
+                        <li>Rückfragen stellen: "¿Podría repetir la pregunta?"</li>
+                        <li>Zeit zum Nachdenken nehmen: "Permítame reflexionar..."</li>
+                        <li>Bei Fehlern nicht aufgeben, sondern korrigieren</li>
+                        <li>Höflich und respektvoll bleiben</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>Nützliche Redemittel für die mündliche Prüfung</h4>
+                <ul>
+                    <li><strong>Präsentation beginnen:</strong> "Voy a presentar...", "Me gustaría hablar de..."</li>
+                    <li><strong>Gliederung:</strong> "En primer lugar...", "Por otra parte...", "Finalmente..."</li>
+                    <li><strong>Meinung äußern:</strong> "En mi opinión...", "Creo que...", "Me parece que..."</li>
+                    <li><strong>Zeit gewinnen:</strong> "Es una pregunta interesante...", "Bueno, pues..."</li>
+                    <li><strong>Unsicherheit:</strong> "No estoy completamente seguro/a, pero..."</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Prüfungsangst -->
+        <div class="strategy-section">
+            <h2><span class="icon">🧘</span>Prüfungsangst bewältigen</h2>
+            
+            <h3>Mentale Vorbereitung</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Entspannungstechniken</h4>
+                    <ul class="strategy-list">
+                        <li><strong>4-7-8 Atemtechnik:</strong> 4 Sek. einatmen, 7 Sek. halten, 8 Sek. ausatmen</li>
+                        <li><strong>Progressive Muskelentspannung:</strong> Verschiedene Muskelgruppen an- und entspannen</li>
+                        <li><strong>Visualisierung:</strong> Erfolgreiche Prüfung mental durchspielen</li>
+                        <li><strong>Positive Selbstgespräche:</strong> "Ich bin gut vorbereitet", "Ich schaffe das"</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Körperliche Vorbereitung</h4>
+                    <ul class="strategy-list">
+                        <li>Ausreichend Schlaf (mindestens 7-8 Stunden)</li>
+                        <li>Gesundes Frühstück vor der Prüfung</li>
+                        <li>Regelmäßige Bewegung und Sport</li>
+                        <li>Genügend Flüssigkeit (Wasser, ungesüßte Tees)</li>
+                        <li>Koffein in Maßen (nicht übertreiben)</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Am Prüfungstag</h4>
+                    <ul class="strategy-list">
+                        <li>Rechtzeitig und entspannt anreisen</li>
+                        <li>Alle benötigten Materialien dabei haben</li>
+                        <li>Kurze Meditation oder Atemübungen vor Beginn</li>
+                        <li>Positive Einstellung: "Ich zeige, was ich kann"</li>
+                        <li>Bei Blackouts: Tief durchatmen und neu anfangen</li>
+                        <li>Fokus auf das Machbare, nicht auf Perfektion</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h4>Was tun bei akuter Prüfungsangst?</h4>
+                <ul>
+                    <li><strong>STOPP-Technik:</strong> Gedankenstopp bei negativen Spiralen</li>
+                    <li><strong>Realitätscheck:</strong> "Was ist das Schlimmste, was passieren kann?"</li>
+                    <li><strong>Erfolgserlebnisse erinnern:</strong> An frühere bestandene Prüfungen denken</li>
+                    <li><strong>Professionelle Hilfe:</strong> Bei extremer Angst psychologische Beratung suchen</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bewertungskriterien -->
+        <div class="strategy-section">
+            <h2><span class="icon">📊</span>Bewertungskriterien verstehen</h2>
+            
+            <h3>Schriftliche Prüfung - Bewertungsaspekte</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Inhaltliche Leistung (60%)</h4>
+                    <ul class="strategy-list">
+                        <li><strong>Textverständnis:</strong> Vollständige Erfassung der Hauptaussagen</li>
+                        <li><strong>Analyse:</strong> Korrekte Identifikation von Struktur und Stilmitteln</li>
+                        <li><strong>Argumentation:</strong> Logischer Aufbau und nachvollziehbare Begründungen</li>
+                        <li><strong>Eigenständigkeit:</strong> Kritische Reflexion und persönliche Stellungnahme</li>
+                        <li><strong>Kulturwissen:</strong> Angemessene Einordnung in kulturellen Kontext</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Sprachliche Leistung (40%)</h4>
+                    <ul class="strategy-list">
+                        <li><strong>Grammatik:</strong> Korrekte Anwendung komplexer Strukturen</li>
+                        <li><strong>Wortschatz:</strong> Vielfalt und Präzision des Vokabulars</li>
+                        <li><strong>Ausdruck:</strong> Flüssigkeit und stilistische Angemessenheit</li>
+                        <li><strong>Rechtschreibung:</strong> Korrekte Orthografie und Akzentsetzung</li>
+                        <li><strong>Textsorte:</strong> Beherrschung der jeweiligen Textkonventionen</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Mündliche Prüfung - Bewertungsaspekte</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Kommunikative Kompetenz</h4>
+                    <ul class="strategy-list">
+                        <li>Flüssigkeit und Verständlichkeit der Rede</li>
+                        <li>Angemessene Reaktion auf Gesprächsimpulse</li>
+                        <li>Strategien bei Verständnisschwierigkeiten</li>
+                        <li>Natürlichkeit der Kommunikation</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Inhaltliche Kompetenz</h4>
+                    <ul class="strategy-list">
+                        <li>Sachliche Richtigkeit der Darstellung</li>
+                        <li>Strukturierte Präsentation der Inhalte</li>
+                        <li>Problemorientierte Herangehensweise</li>
+                        <li>Kritische Reflexionsfähigkeit</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>Strategien für bessere Bewertungen</h4>
+                <ul>
+                    <li><strong>Übererfüllung:</strong> Zeigen Sie mehr als das Minimum (komplexe Satzstrukturen, vielfältiger Wortschatz)</li>
+                    <li><strong>Präzision:</strong> Verwenden Sie spezifische Fachbegriffe und genaue Beschreibungen</li>
+                    <li><strong>Struktur:</strong> Klare Gliederung macht Ihre Gedanken nachvollziehbar</li>
+                    <li><strong>Beispiele:</strong> Konkrete Belege verstärken Ihre Argumentation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Last-Minute Tipps -->
+        <div class="strategy-section">
+            <h2><span class="icon">⚡</span>Last-Minute Tipps</h2>
+            
+            <h3>24 Stunden vor der Prüfung</h3>
+            <div class="checklist">
+                <h4>Checkliste für den Vorabend:</h4>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="materials">
+                    <label for="materials">Alle Materialien bereitgelegt (Stifte, Wörterbuch, Ausweis)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="route">
+                    <label for="route">Anfahrtsweg und Pünktlichkeit geplant</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="sleep">
+                    <label for="sleep">Früh ins Bett für ausreichend Schlaf</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="review">
+                    <label for="review">Kurze Wiederholung der wichtigsten Eselsbrücken</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="relax">
+                    <label for="relax">Entspannungsaktivität (spazieren, lesen, Musik)</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="nutrition">
+                    <label for="nutrition">Gesundes Abendessen, viel Wasser trinken</label>
+                </div>
+            </div>
+
+            <h3>Am Prüfungsmorgen</h3>
+            <div class="time-schedule">
+                <h4>Optimaler Tagesablauf:</h4>
+                <div class="time-item">
+                    <span>Aufstehen (ausreichend Zeit einplanen)</span>
+                    <span class="time">2h vor Prüfung</span>
+                </div>
+                <div class="time-item">
+                    <span>Duschen und anziehen</span>
+                    <span class="time">90 Min vorher</span>
+                </div>
+                <div class="time-item">
+                    <span>Gesundes Frühstück</span>
+                    <span class="time">75 Min vorher</span>
+                </div>
+                <div class="time-item">
+                    <span>Kurze Wiederholung (max. 15 Min)</span>
+                    <span class="time">60 Min vorher</span>
+                </div>
+                <div class="time-item">
+                    <span>Aufbruch zur Schule</span>
+                    <span class="time">45 Min vorher</span>
+                </div>
+                <div class="time-item">
+                    <span>Ankunft und Entspannung</span>
+                    <span class="time">15 Min vorher</span>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h4>Vermeiden Sie am Prüfungstag:</h4>
+                <ul>
+                    <li>Intensive neue Lerninhalte (verwirrt nur)</li>
+                    <li>Diskussionen mit anderen über Stoff</li>
+                    <li>Zu viel Koffein (macht nervös)</li>
+                    <li>Zu spätes Aufstehen (Stress)</li>
+                    <li>Neue, ungewohnte Nahrung</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Notfallstrategien -->
+        <div class="strategy-section">
+            <h2><span class="icon">🆘</span>Notfallstrategien während der Prüfung</h2>
+            
+            <h3>Bei verschiedenen Problemen</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>🧠 Blackout - totaler Aussetzer</h4>
+                    <ul class="strategy-list">
+                        <li>Stoppen Sie und atmen Sie 3x tief durch</li>
+                        <li>Trinken Sie einen Schluck Wasser</li>
+                        <li>Lesen Sie die Aufgabe noch einmal langsam</li>
+                        <li>Beginnen Sie mit dem, was Sie sicher wissen</li>
+                        <li>Notieren Sie Stichworte, auch wenn chaotisch</li>
+                        <li>Der Rest kommt oft von selbst zurück</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>⏰ Zeitnot - zu wenig Zeit</h4>
+                    <ul class="strategy-list">
+                        <li>Prioritäten setzen: Welche Aufgabe bringt mehr Punkte?</li>
+                        <li>Stichpunkte statt ausformulierter Texte</li>
+                        <li>Lücken lassen und später füllen</li>
+                        <li>Keine Panik - besser unvollständig als gar nicht</li>
+                        <li>Grammatik wird zweitrangig, Inhalt hat Vorrang</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>❓ Verständnisprobleme</h4>
+                    <ul class="strategy-list">
+                        <li>Aufgabenstellung mehrmals lesen</li>
+                        <li>Schlüsselwörter (Operatoren) identifizieren</li>
+                        <li>Kontext nutzen für unbekannte Wörter</li>
+                        <li>Bei mündlicher Prüfung: höflich nachfragen</li>
+                        <li>Das bearbeiten, was Sie verstanden haben</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="common-mistakes">
+                <h4>Wichtige Merkhilfen für den Notfall (WUDHU-Regel für Subjuntivo):</h4>
+                <div class="mistake-item">
+                    <strong>W</strong>unsch - Espero que tengas suerte
+                </div>
+                <div class="mistake-item">
+                    <strong>U</strong>ngewissheit - Dudo que venga
+                </div>
+                <div class="mistake-item">
+                    <strong>D</strong>eutung - Es posible que llueva
+                </div>
+                <div class="mistake-item">
+                    <strong>H</strong>ypothese - Si tuviera tiempo...
+                </div>
+                <div class="mistake-item">
+                    <strong>U</strong>nbewiesenes - No creo que sea verdad
+                </div>
+            </div>
+        </div>
+
+        <!-- Zusätzliche Ressourcen -->
+        <div class="strategy-section">
+            <h2><span class="icon">📚</span>Zusätzliche Ressourcen und Tools</h2>
+            
+            <h3>Empfohlene Lernmaterialien</h3>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>Online-Ressourcen</h4>
+                    <ul class="strategy-list">
+                        <li><strong>RAE (Real Academia Española):</strong> Offizielle spanische Grammatik</li>
+                        <li><strong>Konjugationstrainer:</strong> Verbformen.de oder ähnliche Apps</li>
+                        <li><strong>SpanishPod101:</strong> Hörverständnis und Aussprache</li>
+                        <li><strong>Lingolia Spanisch:</strong> Übersichtliche Grammatikerklärungen</li>
+                        <li><strong>YouTube:</strong> SpanischMitTomás, Butterfly Spanish</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Authentische Medien</h4>
+                    <ul class="strategy-list">
+                        <li><strong>Zeitungen:</strong> El País, ABC, La Vanguardia</li>
+                        <li><strong>Podcasts:</strong> Radio Nacional España, SER Podcast</li>
+                        <li><strong>Netflix Serien:</strong> Élite, La Casa de Papel, Las Chicas del Cable</li>
+                        <li><strong>YouTube Kanäle:</strong> Date un Voltio, ElRubius (für Jugendsprache)</li>
+                        <li><strong>Musik:</strong> Jesse & Joy, Manu Chao, Álvaro Soler</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h4>Apps und Tools</h4>
+                    <ul class="strategy-list">
+                        <li><strong>Anki:</strong> Karteikarten-App für Vokabeln</li>
+                        <li><strong>HelloTalk:</strong> Tandem-Partner finden</li>
+                        <li><strong>Reverso Context:</strong> Beispielsätze und Übersetzungen</li>
+                        <li><strong>SpanishDict:</strong> Wörterbuch mit Konjugationen</li>
+                        <li><strong>Quizlet:</strong> Vorgefertigte Vokabellisten</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>Tipp für Tandem-Partner und Konversation</h4>
+                <p>Suchen Sie sich einen Tandem-Partner über Plattformen wie HelloTalk oder iTalki. Regelmäßige Gespräche (auch nur 15-20 Minuten pro Woche) verbessern Ihre Sprechfertigkeit enorm und geben Ihnen Sicherheit für die mündliche Prüfung.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div style="margin-top: 15px;">
+                <a href="index.html">🏠 Startseite</a>
+            </div>
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #ddd;">
+                <p style="color: #666; margin: 0;">
+                    🎓 <strong>¡Mucha suerte en el examen!</strong> - Viel Erfolg bei der Prüfung!<br>
+                    Mit der richtigen Vorbereitung und diesen Strategien schaffen Sie das Spanisch-Abitur erfolgreich.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Interaktive Checkliste
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        
+        checkboxes.forEach(checkbox => {
+            // Lade gespeicherten Status
+            const savedState = localStorage.getItem(checkbox.id);
+            if (savedState === 'checked') {
+                checkbox.checked = true;
+                checkbox.parentElement.style.opacity = '0.7';
+                checkbox.parentElement.style.textDecoration = 'line-through';
+            }
+            
+            // Event Listener für Änderungen
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    localStorage.setItem(this.id, 'checked');
+                    this.parentElement.style.opacity = '0.7';
+                    this.parentElement.style.textDecoration = 'line-through';
+                } else {
+                    localStorage.removeItem(this.id);
+                    this.parentElement.style.opacity = '1';
+                    this.parentElement.style.textDecoration = 'none';
+                }
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Motivational Timer
+        function showMotivationalMessage() {
+            const messages = [
+                "💪 Du schaffst das!",
+                "🎯 Bleib fokussiert!",
+                "⭐ Jede Minute Lernen bringt dich näher ans Ziel!",
+                "🚀 Du bist auf dem richtigen Weg!",
+                "🏆 Erfolg ist die Summe kleiner Bemühungen!"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            
+            // Zeige kurz eine Motivationsnachricht
+            const messageDiv = document.createElement('div');
+            messageDiv.textContent = randomMessage;
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #74b9ff, #0984e3);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                box-shadow: 0 5px 20px rgba(116, 185, 255, 0.4);
+                z-index: 1000;
+                font-weight: bold;
+                animation: slideIn 0.5s ease-out;
+            `;
+            
+            document.body.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                messageDiv.style.animation = 'slideOut 0.5s ease-in';
+                setTimeout(() => document.body.removeChild(messageDiv), 500);
+            }, 3000);
+        }
+
+        // Zeige alle 5 Minuten eine Motivationsnachricht
+        setInterval(showMotivationalMessage, 300000);
+
+        // CSS für Animationen
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

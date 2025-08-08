@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanisch Abitur - Wortschatz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #667eea;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+        
+        .header-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .search-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .search-input {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            width: 300px;
+            max-width: 100%;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        
+        .search-input:focus {
+            border-color: #667eea;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .quiz-button {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .quiz-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .mode-button {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .mode-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+        }
+        
+        .progress-container {
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 8px;
+            position: relative;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .progress-text {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .mode-indicator {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .vocab-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .vocab-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .vocab-category {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .vocab-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            font-size: 0.95em;
+        }
+        
+        .vocab-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .vocab-item:hover {
+            background: #e9ecef;
+            border-color: #667eea;
+        }
+        
+        .vocab-item.learned {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+        
+        .vocab-item.quiz-mode {
+            background: #fff3cd;
+            border-color: #ffc107;
+        }
+        
+        .vocab-item.quiz-mode:hover {
+            background: #ffeaa7;
+        }
+        
+        .german {
+            font-weight: 600;
+            color: #333;
+            flex: 1;
+        }
+        
+        .spanish {
+            color: #667eea;
+            font-weight: bold;
+            flex: 1;
+            text-align: right;
+        }
+        
+        .quiz-mode .spanish {
+            display: none;
+        }
+        
+        .section-divider {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .quiz-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .quiz-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .quiz-question {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .quiz-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2em;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+        
+        .quiz-input:focus {
+            border-color: #667eea;
+        }
+        
+        .quiz-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .quiz-submit, .quiz-cancel {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .quiz-submit {
+            background: #28a745;
+            color: white;
+        }
+        
+        .quiz-submit:hover {
+            background: #218838;
+        }
+        
+        .quiz-cancel {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .quiz-cancel:hover {
+            background: #5a6268;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            z-index: 1001;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification.success {
+            background: #28a745;
+        }
+        
+        .notification.error {
+            background: #dc3545;
+        }
+        
+        .notification.info {
+            background: #17a2b8;
+        }
+        
+        @media (max-width: 768px) {
+            .vocab-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-input {
+                width: 100%;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .back-btn {
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-bottom: 20px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-btn">← Zurück zur Hauptseite</a>
+            <h1 class="header-title">💬 Wortschatz für das Spanisch-Abitur</h1>
+            <p>Systematisch geordneter Grundwortschatz und thematische Vokabeln</p>
+            
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Vokabel suchen..." id="searchInput">
+            </div>
+            
+            <div class="mode-indicator" id="modeIndicator">
+                Modus: Lernen
+            </div>
+            
+            <div class="controls">
+                <button class="quiz-button" onclick="startRandomQuiz()">🎯 Vokabel-Quiz starten</button>
+                <button class="mode-button" onclick="toggleMode()">🔄 Modus wechseln</button>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="learnedCount">0</span> von <span id="totalCount">0</span> Vokabeln gelernt
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider">
+            <div class="section-title">🏠 Grundwortschatz - Haushalt und Alltag</div>
+            <p>Die wichtigsten Vokabeln für den täglichen Gebrauch</p>
+        </div>
+
+        <div class="vocab-grid">
+            <div class="vocab-card">
+                <div class="vocab-category">👕 Kleidung</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">das Hemd</span><span class="spanish">la camisa</span></div>
+                    <div class="vocab-item"><span class="german">die Bluse</span><span class="spanish">la blusa</span></div>
+                    <div class="vocab-item"><span class="german">die Hose</span><span class="spanish">los pantalones</span></div>
+                    <div class="vocab-item"><span class="german">das Kleid</span><span class="spanish">el vestido</span></div>
+                    <div class="vocab-item"><span class="german">der Rock</span><span class="spanish">la falda</span></div>
+                    <div class="vocab-item"><span class="german">der Anzug</span><span class="spanish">el traje</span></div>
+                    <div class="vocab-item"><span class="german">die Krawatte</span><span class="spanish">la corbata</span></div>
+                    <div class="vocab-item"><span class="german">der Pullover</span><span class="spanish">el suéter</span></div>
+                    <div class="vocab-item"><span class="german">die Jacke</span><span class="spanish">la chaqueta</span></div>
+                    <div class="vocab-item"><span class="german">der Mantel</span><span class="spanish">el abrigo</span></div>
+                    <div class="vocab-item"><span class="german">die Schuhe</span><span class="spanish">los zapatos</span></div>
+                    <div class="vocab-item"><span class="german">die Socken</span><span class="spanish">los calcetines</span></div>
+                    <div class="vocab-item"><span class="german">die Stiefel</span><span class="spanish">las botas</span></div>
+                    <div class="vocab-item"><span class="german">die Sandalen</span><span class="spanish">las sandalias</span></div>
+                    <div class="vocab-item"><span class="german">der Hut</span><span class="spanish">el sombrero</span></div>
+                    <div class="vocab-item"><span class="german">die Mütze</span><span class="spanish">el gorro</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">👤 Personbeschreibung</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">groß</span><span class="spanish">alto/a</span></div>
+                    <div class="vocab-item"><span class="german">klein</span><span class="spanish">bajo/a</span></div>
+                    <div class="vocab-item"><span class="german">dick</span><span class="spanish">gordo/a</span></div>
+                    <div class="vocab-item"><span class="german">dünn</span><span class="spanish">delgado/a</span></div>
+                    <div class="vocab-item"><span class="german">jung</span><span class="spanish">joven</span></div>
+                    <div class="vocab-item"><span class="german">alt</span><span class="spanish">viejo/a</span></div>
+                    <div class="vocab-item"><span class="german">hübsch</span><span class="spanish">bonito/a</span></div>
+                    <div class="vocab-item"><span class="german">hässlich</span><span class="spanish">feo/a</span></div>
+                    <div class="vocab-item"><span class="german">freundlich</span><span class="spanish">amigable</span></div>
+                    <div class="vocab-item"><span class="german">unfreundlich</span><span class="spanish">antipático/a</span></div>
+                    <div class="vocab-item"><span class="german">intelligent</span><span class="spanish">inteligente</span></div>
+                    <div class="vocab-item"><span class="german">dumm</span><span class="spanish">tonto/a</span></div>
+                    <div class="vocab-item"><span class="german">stark</span><span class="spanish">fuerte</span></div>
+                    <div class="vocab-item"><span class="german">schwach</span><span class="spanish">débil</span></div>
+                    <div class="vocab-item"><span class="german">die Augen</span><span class="spanish">los ojos</span></div>
+                    <div class="vocab-item"><span class="german">die Haare</span><span class="spanish">el cabello</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🗺️ Wegbeschreibung</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">rechts</span><span class="spanish">a la derecha</span></div>
+                    <div class="vocab-item"><span class="german">links</span><span class="spanish">a la izquierda</span></div>
+                    <div class="vocab-item"><span class="german">geradeaus</span><span class="spanish">todo recto</span></div>
+                    <div class="vocab-item"><span class="german">an der Ecke</span><span class="spanish">en la esquina</span></div>
+                    <div class="vocab-item"><span class="german">die Straße entlang</span><span class="spanish">por la calle</span></div>
+                    <div class="vocab-item"><span class="german">gegenüber</span><span class="spanish">enfrente de</span></div>
+                    <div class="vocab-item"><span class="german">neben</span><span class="spanish">al lado de</span></div>
+                    <div class="vocab-item"><span class="german">in der Nähe von</span><span class="spanish">cerca de</span></div>
+                    <div class="vocab-item"><span class="german">weit entfernt</span><span class="spanish">lejos de</span></div>
+                    <div class="vocab-item"><span class="german">die Kreuzung</span><span class="spanish">el cruce</span></div>
+                    <div class="vocab-item"><span class="german">die Ampel</span><span class="spanish">el semáforo</span></div>
+                    <div class="vocab-item"><span class="german">der Kreisverkehr</span><span class="spanish">la rotonda</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🔢 Zahlen und Zeit</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">null</span><span class="spanish">cero</span></div>
+                    <div class="vocab-item"><span class="german">eins</span><span class="spanish">uno</span></div>
+                    <div class="vocab-item"><span class="german">zwei</span><span class="spanish">dos</span></div>
+                    <div class="vocab-item"><span class="german">drei</span><span class="spanish">tres</span></div>
+                    <div class="vocab-item"><span class="german">vier</span><span class="spanish">cuatro</span></div>
+                    <div class="vocab-item"><span class="german">fünf</span><span class="spanish">cinco</span></div>
+                    <div class="vocab-item"><span class="german">sechs</span><span class="spanish">seis</span></div>
+                    <div class="vocab-item"><span class="german">sieben</span><span class="spanish">siete</span></div>
+                    <div class="vocab-item"><span class="german">acht</span><span class="spanish">ocho</span></div>
+                    <div class="vocab-item"><span class="german">neun</span><span class="spanish">nueve</span></div>
+                    <div class="vocab-item"><span class="german">zehn</span><span class="spanish">diez</span></div>
+                    <div class="vocab-item"><span class="german">elf</span><span class="spanish">once</span></div>
+                    <div class="vocab-item"><span class="german">zwölf</span><span class="spanish">doce</span></div>
+                    <div class="vocab-item"><span class="german">zwanzig</span><span class="spanish">veinte</span></div>
+                    <div class="vocab-item"><span class="german">hundert</span><span class="spanish">cien</span></div>
+                    <div class="vocab-item"><span class="german">tausend</span><span class="spanish">mil</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🌈 Farben</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">rot</span><span class="spanish">rojo</span></div>
+                    <div class="vocab-item"><span class="german">blau</span><span class="spanish">azul</span></div>
+                    <div class="vocab-item"><span class="german">grün</span><span class="spanish">verde</span></div>
+                    <div class="vocab-item"><span class="german">gelb</span><span class="spanish">amarillo</span></div>
+                    <div class="vocab-item"><span class="german">orange</span><span class="spanish">naranja</span></div>
+                    <div class="vocab-item"><span class="german">rosa</span><span class="spanish">rosa</span></div>
+                    <div class="vocab-item"><span class="german">lila</span><span class="spanish">morado</span></div>
+                    <div class="vocab-item"><span class="german">braun</span><span class="spanish">marrón</span></div>
+                    <div class="vocab-item"><span class="german">schwarz</span><span class="spanish">negro</span></div>
+                    <div class="vocab-item"><span class="german">weiß</span><span class="spanish">blanco</span></div>
+                    <div class="vocab-item"><span class="german">grau</span><span class="spanish">gris</span></div>
+                    <div class="vocab-item"><span class="german">gold</span><span class="spanish">dorado</span></div>
+                    <div class="vocab-item"><span class="german">silber</span><span class="spanish">plateado</span></div>
+                    <div class="vocab-item"><span class="german">dunkel</span><span class="spanish">oscuro</span></div>
+                    <div class="vocab-item"><span class="german">hell</span><span class="spanish">claro</span></div>
+                    <div class="vocab-item"><span class="german">türkis</span><span class="spanish">turquesa</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🌦️ Wetter</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">das Wetter</span><span class="spanish">el tiempo</span></div>
+                    <div class="vocab-item"><span class="german">sonnig</span><span class="spanish">soleado</span></div>
+                    <div class="vocab-item"><span class="german">regnerisch</span><span class="spanish">lluvioso</span></div>
+                    <div class="vocab-item"><span class="german">bewölkt</span><span class="spanish">nublado</span></div>
+                    <div class="vocab-item"><span class="german">windig</span><span class="spanish">ventoso</span></div>
+                    <div class="vocab-item"><span class="german">neblig</span><span class="spanish">nebuloso</span></div>
+                    <div class="vocab-item"><span class="german">heiß</span><span class="spanish">caliente</span></div>
+                    <div class="vocab-item"><span class="german">kalt</span><span class="spanish">frío</span></div>
+                    <div class="vocab-item"><span class="german">der Regen</span><span class="spanish">la lluvia</span></div>
+                    <div class="vocab-item"><span class="german">der Schnee</span><span class="spanish">la nieve</span></div>
+                    <div class="vocab-item"><span class="german">der Sturm</span><span class="spanish">la tormenta</span></div>
+                    <div class="vocab-item"><span class="german">das Gewitter</span><span class="spanish">la tormenta eléctrica</span></div>
+                    <div class="vocab-item"><span class="german">der Hagel</span><span class="spanish">el granizo</span></div>
+                    <div class="vocab-item"><span class="german">die Sonne</span><span class="spanish">el sol</span></div>
+                    <div class="vocab-item"><span class="german">der Wind</span><span class="spanish">el viento</span></div>
+                    <div class="vocab-item"><span class="german">der Nebel</span><span class="spanish">la niebla</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">📅 Zeit und Datum</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">heute</span><span class="spanish">hoy</span></div>
+                    <div class="vocab-item"><span class="german">gestern</span><span class="spanish">ayer</span></div>
+                    <div class="vocab-item"><span class="german">morgen</span><span class="spanish">mañana</span></div>
+                    <div class="vocab-item"><span class="german">die Woche</span><span class="spanish">la semana</span></div>
+                    <div class="vocab-item"><span class="german">der Monat</span><span class="spanish">el mes</span></div>
+                    <div class="vocab-item"><span class="german">das Jahr</span><span class="spanish">el año</span></div>
+                    <div class="vocab-item"><span class="german">früh</span><span class="spanish">temprano</span></div>
+                    <div class="vocab-item"><span class="german">spät</span><span class="spanish">tarde</span></div>
+                    <div class="vocab-item"><span class="german">Montag</span><span class="spanish">lunes</span></div>
+                    <div class="vocab-item"><span class="german">Dienstag</span><span class="spanish">martes</span></div>
+                    <div class="vocab-item"><span class="german">Mittwoch</span><span class="spanish">miércoles</span></div>
+                    <div class="vocab-item"><span class="german">Donnerstag</span><span class="spanish">jueves</span></div>
+                    <div class="vocab-item"><span class="german">Freitag</span><span class="spanish">viernes</span></div>
+                    <div class="vocab-item"><span class="german">Samstag</span><span class="spanish">sábado</span></div>
+                    <div class="vocab-item"><span class="german">Sonntag</span><span class="spanish">domingo</span></div>
+                    <div class="vocab-item"><span class="german">Januar</span><span class="spanish">enero</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider">
+            <div class="section-title">🎯 Wichtige Verben - Die Basis der Kommunikation</div>
+            <p>Die essentiellen Verben für das Spanisch-Abitur nach Themengebieten</p>
+        </div>
+
+        <div class="vocab-grid">
+            <div class="vocab-card">
+                <div class="vocab-category">⚡ Grundverben</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">sein (dauerhaft)</span><span class="spanish">ser</span></div>
+                    <div class="vocab-item"><span class="german">sein (vorübergehend)</span><span class="spanish">estar</span></div>
+                    <div class="vocab-item"><span class="german">haben</span><span class="spanish">tener</span></div>
+                    <div class="vocab-item"><span class="german">es gibt</span><span class="spanish">hay</span></div>
+                    <div class="vocab-item"><span class="german">geben</span><span class="spanish">dar</span></div>
+                    <div class="vocab-item"><span class="german">machen</span><span class="spanish">hacer</span></div>
+                    <div class="vocab-item"><span class="german">gehen</span><span class="spanish">ir</span></div>
+                    <div class="vocab-item"><span class="german">kommen</span><span class="spanish">venir</span></div>
+                    <div class="vocab-item"><span class="german">sehen</span><span class="spanish">ver</span></div>
+                    <div class="vocab-item"><span class="german">wissen</span><span class="spanish">saber</span></div>
+                    <div class="vocab-item"><span class="german">kennen</span><span class="spanish">conocer</span></div>
+                    <div class="vocab-item"><span class="german">leben</span><span class="spanish">vivir</span></div>
+                    <div class="vocab-item"><span class="german">nehmen</span><span class="spanish">tomar</span></div>
+                    <div class="vocab-item"><span class="german">bringen</span><span class="spanish">traer</span></div>
+                    <div class="vocab-item"><span class="german">lassen</span><span class="spanish">dejar</span></div>
+                    <div class="vocab-item"><span class="german">bleiben</span><span class="spanish">quedarse</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🗣️ Kommunikationsverben</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">sprechen</span><span class="spanish">hablar</span></div>
+                    <div class="vocab-item"><span class="german">sagen</span><span class="spanish">decir</span></div>
+                    <div class="vocab-item"><span class="german">antworten</span><span class="spanish">responder</span></div>
+                    <div class="vocab-item"><span class="german">fragen</span><span class="spanish">preguntar</span></div>
+                    <div class="vocab-item"><span class="german">erzählen</span><span class="spanish">contar</span></div>
+                    <div class="vocab-item"><span class="german">erklären</span><span class="spanish">explicar</span></div>
+                    <div class="vocab-item"><span class="german">verstehen</span><span class="spanish">entender</span></div>
+                    <div class="vocab-item"><span class="german">hören</span><span class="spanish">oír</span></div>
+                    <div class="vocab-item"><span class="german">zuhören</span><span class="spanish">escuchar</span></div>
+                    <div class="vocab-item"><span class="german">schreiben</span><span class="spanish">escribir</span></div>
+                    <div class="vocab-item"><span class="german">lesen</span><span class="spanish">leer</span></div>
+                    <div class="vocab-item"><span class="german">rufen</span><span class="spanish">llamar</span></div>
+                    <div class="vocab-item"><span class="german">sich vorstellen</span><span class="spanish">presentarse</span></div>
+                    <div class="vocab-item"><span class="german">sich begrüßen</span><span class="spanish">saludarse</span></div>
+                    <div class="vocab-item"><span class="german">sich verabschieden</span><span class="spanish">despedirse</span></div>
+                    <div class="vocab-item"><span class="german">diskutieren</span><span class="spanish">discutir</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🚶 Bewegungsverben</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">gehen</span><span class="spanish">andar</span></div>
+                    <div class="vocab-item"><span class="german">laufen</span><span class="spanish">correr</span></div>
+                    <div class="vocab-item"><span class="german">fahren</span><span class="spanish">conducir</span></div>
+                    <div class="vocab-item"><span class="german">fliegen</span><span class="spanish">volar</span></div>
+                    <div class="vocab-item"><span class="german">reisen</span><span class="spanish">viajar</span></div>
+                    <div class="vocab-item"><span class="german">ankommen</span><span class="spanish">llegar</span></div>
+                    <div class="vocab-item"><span class="german">weggehen</span><span class="spanish">irse</span></div>
+                    <div class="vocab-item"><span class="german">zurückkehren</span><span class="spanish">volver</span></div>
+                    <div class="vocab-item"><span class="german">folgen</span><span class="spanish">seguir</span></div>
+                    <div class="vocab-item"><span class="german">begleiten</span><span class="spanish">acompañar</span></div>
+                    <div class="vocab-item"><span class="german">einsteigen</span><span class="spanish">subir</span></div>
+                    <div class="vocab-item"><span class="german">aussteigen</span><span class="spanish">bajar</span></div>
+                    <div class="vocab-item"><span class="german">sich bewegen</span><span class="spanish">moverse</span></div>
+                    <div class="vocab-item"><span class="german">springen</span><span class="spanish">saltar</span></div>
+                    <div class="vocab-item"><span class="german">fallen</span><span class="spanish">caer</span></div>
+                    <div class="vocab-item"><span class="german">steigen</span><span class="spanish">subir</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">💭 Modalverben und Gefühle</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">können</span><span class="spanish">poder</span></div>
+                    <div class="vocab-item"><span class="german">müssen</span><span class="spanish">deber</span></div>
+                    <div class="vocab-item"><span class="german">wollen</span><span class="spanish">querer</span></div>
+                    <div class="vocab-item"><span class="german">mögen</span><span class="spanish">gustar</span></div>
+                    <div class="vocab-item"><span class="german">sollen</span><span class="spanish">tener que</span></div>
+                    <div class="vocab-item"><span class="german">dürfen</span><span class="spanish">poder</span></div>
+                    <div class="vocab-item"><span class="german">lieben</span><span class="spanish">amar</span></div>
+                    <div class="vocab-item"><span class="german">hassen</span><span class="spanish">odiar</span></div>
+                    <div class="vocab-item"><span class="german">sich freuen</span><span class="spanish">alegrarse</span></div>
+                    <div class="vocab-item"><span class="german">sich ärgern</span><span class="spanish">enfadarse</span></div>
+                    <div class="vocab-item"><span class="german">weinen</span><span class="spanish">llorar</span></div>
+                    <div class="vocab-item"><span class="german">lachen</span><span class="spanish">reír</span></div>
+                    <div class="vocab-item"><span class="german">sich sorgen</span><span class="spanish">preocuparse</span></div>
+                    <div class="vocab-item"><span class="german">sich entspannen</span><span class="spanish">relajarse</span></div>
+                    <div class="vocab-item"><span class="german">träumen</span><span class="spanish">soñar</span></div>
+                    <div class="vocab-item"><span class="german">hoffen</span><span class="spanish">esperar</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🍽️ Alltags- und Haushaltsverben</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">essen</span><span class="spanish">comer</span></div>
+                    <div class="vocab-item"><span class="german">trinken</span><span class="spanish">beber</span></div>
+                    <div class="vocab-item"><span class="german">kochen</span><span class="spanish">cocinar</span></div>
+                    <div class="vocab-item"><span class="german">bestellen</span><span class="spanish">pedir</span></div>
+                    <div class="vocab-item"><span class="german">schlafen</span><span class="spanish">dormir</span></div>
+                    <div class="vocab-item"><span class="german">aufwachen</span><span class="spanish">despertarse</span></div>
+                    <div class="vocab-item"><span class="german">aufstehen</span><span class="spanish">levantarse</span></div>
+                    <div class="vocab-item"><span class="german">sich waschen</span><span class="spanish">lavarse</span></div>
+                    <div class="vocab-item"><span class="german">sich anziehen</span><span class="spanish">vestirse</span></div>
+                    <div class="vocab-item"><span class="german">sich ausziehen</span><span class="spanish">desvestirse</span></div>
+                    <div class="vocab-item"><span class="german">putzen</span><span class="spanish">limpiar</span></div>
+                    <div class="vocab-item"><span class="german">waschen</span><span class="spanish">lavar</span></div>
+                    <div class="vocab-item"><span class="german">kaufen</span><span class="spanish">comprar</span></div>
+                    <div class="vocab-item"><span class="german">verkaufen</span><span class="spanish">vender</span></div>
+                    <div class="vocab-item"><span class="german">bezahlen</span><span class="spanish">pagar</span></div>
+                    <div class="vocab-item"><span class="german">öffnen</span><span class="spanish">abrir</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider">
+            <div class="section-title">🏠 Erweiterte Themenbereiche</div>
+            <p>Spezialwortschatz für alle Lebensbereiche und Abiturthemen</p>
+        </div>
+
+        <div class="vocab-grid">
+            <div class="vocab-card">
+                <div class="vocab-category">🏠 Haus und Wohnung</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">das Haus</span><span class="spanish">la casa</span></div>
+                    <div class="vocab-item"><span class="german">die Wohnung</span><span class="spanish">el piso</span></div>
+                    <div class="vocab-item"><span class="german">das Zimmer</span><span class="spanish">la habitación</span></div>
+                    <div class="vocab-item"><span class="german">die Küche</span><span class="spanish">la cocina</span></div>
+                    <div class="vocab-item"><span class="german">das Badezimmer</span><span class="spanish">el baño</span></div>
+                    <div class="vocab-item"><span class="german">das Wohnzimmer</span><span class="spanish">el salón</span></div>
+                    <div class="vocab-item"><span class="german">das Schlafzimmer</span><span class="spanish">el dormitorio</span></div>
+                    <div class="vocab-item"><span class="german">der Garten</span><span class="spanish">el jardín</span></div>
+                    <div class="vocab-item"><span class="german">die Garage</span><span class="spanish">el garaje</span></div>
+                    <div class="vocab-item"><span class="german">die Treppe</span><span class="spanish">la escalera</span></div>
+                    <div class="vocab-item"><span class="german">die Tür</span><span class="spanish">la puerta</span></div>
+                    <div class="vocab-item"><span class="german">das Fenster</span><span class="spanish">la ventana</span></div>
+                    <div class="vocab-item"><span class="german">der Balkon</span><span class="spanish">el balcón</span></div>
+                    <div class="vocab-item"><span class="german">das Dach</span><span class="spanish">el tejado</span></div>
+                    <div class="vocab-item"><span class="german">der Keller</span><span class="spanish">el sótano</span></div>
+                    <div class="vocab-item"><span class="german">der Aufzug</span><span class="spanish">el ascensor</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🍽️ Essen und Trinken</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">das Essen</span><span class="spanish">la comida</span></div>
+                    <div class="vocab-item"><span class="german">das Frühstück</span><span class="spanish">el desayuno</span></div>
+                    <div class="vocab-item"><span class="german">das Mittagessen</span><span class="spanish">la comida</span></div>
+                    <div class="vocab-item"><span class="german">das Abendessen</span><span class="spanish">la cena</span></div>
+                    <div class="vocab-item"><span class="german">das Brot</span><span class="spanish">el pan</span></div>
+                    <div class="vocab-item"><span class="german">die Milch</span><span class="spanish">la leche</span></div>
+                    <div class="vocab-item"><span class="german">der Käse</span><span class="spanish">el queso</span></div>
+                    <div class="vocab-item"><span class="german">das Fleisch</span><span class="spanish">la carne</span></div>
+                    <div class="vocab-item"><span class="german">der Fisch</span><span class="spanish">el pescado</span></div>
+                    <div class="vocab-item"><span class="german">das Gemüse</span><span class="spanish">las verduras</span></div>
+                    <div class="vocab-item"><span class="german">das Obst</span><span class="spanish">la fruta</span></div>
+                    <div class="vocab-item"><span class="german">der Apfel</span><span class="spanish">la manzana</span></div>
+                    <div class="vocab-item"><span class="german">die Banane</span><span class="spanish">el plátano</span></div>
+                    <div class="vocab-item"><span class="german">die Orange</span><span class="spanish">la naranja</span></div>
+                    <div class="vocab-item"><span class="german">das Wasser</span><span class="spanish">el agua</span></div>
+                    <div class="vocab-item"><span class="german">der Kaffee</span><span class="spanish">el café</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">👥 Familie und Beziehungen</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">die Familie</span><span class="spanish">la familia</span></div>
+                    <div class="vocab-item"><span class="german">die Eltern</span><span class="spanish">los padres</span></div>
+                    <div class="vocab-item"><span class="german">der Vater</span><span class="spanish">el padre</span></div>
+                    <div class="vocab-item"><span class="german">die Mutter</span><span class="spanish">la madre</span></div>
+                    <div class="vocab-item"><span class="german">der Sohn</span><span class="spanish">el hijo</span></div>
+                    <div class="vocab-item"><span class="german">die Tochter</span><span class="spanish">la hija</span></div>
+                    <div class="vocab-item"><span class="german">der Bruder</span><span class="spanish">el hermano</span></div>
+                    <div class="vocab-item"><span class="german">die Schwester</span><span class="spanish">la hermana</span></div>
+                    <div class="vocab-item"><span class="german">die Großeltern</span><span class="spanish">los abuelos</span></div>
+                    <div class="vocab-item"><span class="german">der Großvater</span><span class="spanish">el abuelo</span></div>
+                    <div class="vocab-item"><span class="german">die Großmutter</span><span class="spanish">la abuela</span></div>
+                    <div class="vocab-item"><span class="german">der Onkel</span><span class="spanish">el tío</span></div>
+                    <div class="vocab-item"><span class="german">die Tante</span><span class="spanish">la tía</span></div>
+                    <div class="vocab-item"><span class="german">der Cousin</span><span class="spanish">el primo</span></div>
+                    <div class="vocab-item"><span class="german">die Cousine</span><span class="spanish">la prima</span></div>
+                    <div class="vocab-item"><span class="german">der Freund</span><span class="spanish">el amigo</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🎓 Bildung und Schule</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">die Bildung</span><span class="spanish">la educación</span></div>
+                    <div class="vocab-item"><span class="german">die Schule</span><span class="spanish">el colegio</span></div>
+                    <div class="vocab-item"><span class="german">die Universität</span><span class="spanish">la universidad</span></div>
+                    <div class="vocab-item"><span class="german">der Student</span><span class="spanish">el estudiante</span></div>
+                    <div class="vocab-item"><span class="german">der Lehrer</span><span class="spanish">el profesor</span></div>
+                    <div class="vocab-item"><span class="german">lernen</span><span class="spanish">aprender</span></div>
+                    <div class="vocab-item"><span class="german">studieren</span><span class="spanish">estudiar</span></div>
+                    <div class="vocab-item"><span class="german">die Prüfung</span><span class="spanish">el examen</span></div>
+                    <div class="vocab-item"><span class="german">das Wissen</span><span class="spanish">el conocimiento</span></div>
+                    <div class="vocab-item"><span class="german">die Kultur</span><span class="spanish">la cultura</span></div>
+                    <div class="vocab-item"><span class="german">die Sprache</span><span class="spanish">el idioma</span></div>
+                    <div class="vocab-item"><span class="german">das Buch</span><span class="spanish">el libro</span></div>
+                    <div class="vocab-item"><span class="german">der Unterricht</span><span class="spanish">la clase</span></div>
+                    <div class="vocab-item"><span class="german">die Hausaufgaben</span><span class="spanish">los deberes</span></div>
+                    <div class="vocab-item"><span class="german">die Note</span><span class="spanish">la nota</span></div>
+                    <div class="vocab-item"><span class="german">bestehen</span><span class="spanish">aprobar</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">💼 Arbeit und Beruf</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">die Arbeit</span><span class="spanish">el trabajo</span></div>
+                    <div class="vocab-item"><span class="german">der Beruf</span><span class="spanish">la profesión</span></div>
+                    <div class="vocab-item"><span class="german">der Arbeitsplatz</span><span class="spanish">el lugar de trabajo</span></div>
+                    <div class="vocab-item"><span class="german">die Karriere</span><span class="spanish">la carrera</span></div>
+                    <div class="vocab-item"><span class="german">die Arbeitslosigkeit</span><span class="spanish">el desempleo</span></div>
+                    <div class="vocab-item"><span class="german">der Chef</span><span class="spanish">el jefe</span></div>
+                    <div class="vocab-item"><span class="german">der Kollege</span><span class="spanish">el colega</span></div>
+                    <div class="vocab-item"><span class="german">das Gehalt</span><span class="spanish">el sueldo</span></div>
+                    <div class="vocab-item"><span class="german">die Bewerbung</span><span class="spanish">la solicitud</span></div>
+                    <div class="vocab-item"><span class="german">das Vorstellungsgespräch</span><span class="spanish">la entrevista</span></div>
+                    <div class="vocab-item"><span class="german">die Erfahrung</span><span class="spanish">la experiencia</span></div>
+                    <div class="vocab-item"><span class="german">die Qualifikation</span><span class="spanish">la cualificación</span></div>
+                    <div class="vocab-item"><span class="german">die Ausbildung</span><span class="spanish">la formación</span></div>
+                    <div class="vocab-item"><span class="german">erfolgreich</span><span class="spanish">exitoso</span></div>
+                    <div class="vocab-item"><span class="german">fleißig</span><span class="spanish">trabajador</span></div>
+                    <div class="vocab-item"><span class="german">kreativ</span><span class="spanish">creativo</span></div>
+                </div>
+            </div>
+        </div>
+
+   <div class="section-divider">
+            <div class="section-title">🍽️ Erweiterte Alltagsthemen</div>
+            <p>Wichtiger Wortschatz für verschiedene Alltagssituationen und Prüfungsthemen</p>
+        </div>
+
+        <div class="vocab-grid">
+            <div class="vocab-card">
+                <div class="vocab-category">🏢 Berufe und Arbeitswelt</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">der Ingenieur</span><span class="spanish">el ingeniero</span></div>
+                    <div class="vocab-item"><span class="german">die Krankenpflegerin</span><span class="spanish">la enfermera</span></div>
+                    <div class="vocab-item"><span class="german">der Flugbegleiter</span><span class="spanish">el azafato</span></div>
+                    <div class="vocab-item"><span class="german">der Webdesigner</span><span class="spanish">el diseñador</span></div>
+                    <div class="vocab-item"><span class="german">der Sekretär</span><span class="spanish">el secretario</span></div>
+                    <div class="vocab-item"><span class="german">das Krankenhaus</span><span class="spanish">el hospital</span></div>
+                    <div class="vocab-item"><span class="german">die Fabrik</span><span class="spanish">la fábrica</span></div>
+                    <div class="vocab-item"><span class="german">das Büro</span><span class="spanish">la oficina</span></div>
+                    <div class="vocab-item"><span class="german">der Kunde</span><span class="spanish">el cliente</span></div>
+                    <div class="vocab-item"><span class="german">telefonieren</span><span class="spanish">hablar por teléfono</span></div>
+                    <div class="vocab-item"><span class="german">die Geschäftsreise</span><span class="spanish">el viaje de negocios</span></div>
+                    <div class="vocab-item"><span class="german">der Lebenslauf</span><span class="spanish">el currículum vitae</span></div>
+                    <div class="vocab-item"><span class="german">die Bewerbung</span><span class="spanish">la solicitud</span></div>
+                    <div class="vocab-item"><span class="german">das Vorstellungsgespräch</span><span class="spanish">la entrevista</span></div>
+                    <div class="vocab-item"><span class="german">die Berufserfahrung</span><span class="spanish">la experiencia laboral</span></div>
+                    <div class="vocab-item"><span class="german">verantwortungsbewusst</span><span class="spanish">responsable</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🏨 Hotel und Tourismus</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">das Hemd</span><span class="spanish">la camisa</span></div>
+                    <div class="vocab-item"><span class="german">der Kellner</span><span class="spanish">el camarero</span></div>
+                    <div class="vocab-item"><span class="german">die Jacke</span><span class="spanish">la chaqueta</span></div>
+                    <div class="vocab-item"><span class="german">die Bluse</span><span class="spanish">la blusa</span></div>
+                    <div class="vocab-item"><span class="german">die Hose</span><span class="spanish">el pantalón</span></div>
+                    <div class="vocab-item"><span class="german">das T-Shirt</span><span class="spanish">la camiseta</span></div>
+                    <div class="vocab-item"><span class="german">der Schuh</span><span class="spanish">el zapato</span></div>
+                    <div class="vocab-item"><span class="german">der Rock</span><span class="spanish">la falda</span></div>
+                    <div class="vocab-item"><span class="german">der Koch</span><span class="spanish">el cocinero</span></div>
+                    <div class="vocab-item"><span class="german">die Jeans</span><span class="spanish">los vaqueros</span></div>
+                    <div class="vocab-item"><span class="german">der Pullover</span><span class="spanish">el jersey</span></div>
+                    <div class="vocab-item"><span class="german">das Kleid</span><span class="spanish">el vestido</span></div>
+                    <div class="vocab-item"><span class="german">das Zimmermädchen</span><span class="spanish">la camarera de piso</span></div>
+                    <div class="vocab-item"><span class="german">gelb</span><span class="spanish">amarillo</span></div>
+                    <div class="vocab-item"><span class="german">elegant</span><span class="spanish">elegante</span></div>
+                    <div class="vocab-item"><span class="german">bequem</span><span class="spanish">cómodo</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🎯 Wichtige Verben aus den Lektionen</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">fortsetzen</span><span class="spanish">seguir</span></div>
+                    <div class="vocab-item"><span class="german">warten</span><span class="spanish">esperar</span></div>
+                    <div class="vocab-item"><span class="german">rauchen</span><span class="spanish">fumar</span></div>
+                    <div class="vocab-item"><span class="german">antworten</span><span class="spanish">contestar</span></div>
+                    <div class="vocab-item"><span class="german">erklären</span><span class="spanish">explicar</span></div>
+                    <div class="vocab-item"><span class="german">fragen</span><span class="spanish">preguntar</span></div>
+                    <div class="vocab-item"><span class="german">kaufen</span><span class="spanish">comprar</span></div>
+                    <div class="vocab-item"><span class="german">verkaufen</span><span class="spanish">vender</span></div>
+                    <div class="vocab-item"><span class="german">verstehen</span><span class="spanish">comprender</span></div>
+                    <div class="vocab-item"><span class="german">bringen</span><span class="spanish">traer</span></div>
+                    <div class="vocab-item"><span class="german">bezahlen</span><span class="spanish">pagar</span></div>
+                    <div class="vocab-item"><span class="german">benötigen</span><span class="spanish">necesitar</span></div>
+                    <div class="vocab-item"><span class="german">denken</span><span class="spanish">pensar</span></div>
+                    <div class="vocab-item"><span class="german">Mittagessen essen</span><span class="spanish">almorzar</span></div>
+                    <div class="vocab-item"><span class="german">schließen</span><span class="spanish">cerrar</span></div>
+                    <div class="vocab-item"><span class="german">bitten/bestellen</span><span class="spanish">pedir</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🚗 Verkehr und Reisen</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">das Flugzeug</span><span class="spanish">el avión</span></div>
+                    <div class="vocab-item"><span class="german">der Flug</span><span class="spanish">el vuelo</span></div>
+                    <div class="vocab-item"><span class="german">mieten</span><span class="spanish">alquilar</span></div>
+                    <div class="vocab-item"><span class="german">das Auto</span><span class="spanish">el coche</span></div>
+                    <div class="vocab-item"><span class="german">praktisch</span><span class="spanish">práctico</span></div>
+                    <div class="vocab-item"><span class="german">ideal</span><span class="spanish">ideal</span></div>
+                    <div class="vocab-item"><span class="german">das Verkehrsmittel</span><span class="spanish">el medio de transporte</span></div>
+                    <div class="vocab-item"><span class="german">ökologisch</span><span class="spanish">ecológico</span></div>
+                    <div class="vocab-item"><span class="german">langsam</span><span class="spanish">lento</span></div>
+                    <div class="vocab-item"><span class="german">jetzt</span><span class="spanish">ahora</span></div>
+                    <div class="vocab-item"><span class="german">das Motorrad</span><span class="spanish">la moto</span></div>
+                    <div class="vocab-item"><span class="german">das Fahrrad</span><span class="spanish">la bicicleta</span></div>
+                    <div class="vocab-item"><span class="german">so</span><span class="spanish">tan</span></div>
+                    <div class="vocab-item"><span class="german">schnell</span><span class="spanish">rápido</span></div>
+                    <div class="vocab-item"><span class="german">neu</span><span class="spanish">nuevo</span></div>
+                    <div class="vocab-item"><span class="german">das Wetter</span><span class="spanish">el tiempo</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🌍 Länder und Kulturen</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">die Hinfahrt</span><span class="spanish">la ida</span></div>
+                    <div class="vocab-item"><span class="german">die Rückfahrt</span><span class="spanish">la vuelta</span></div>
+                    <div class="vocab-item"><span class="german">dauern</span><span class="spanish">durar</span></div>
+                    <div class="vocab-item"><span class="german">erlaubt sein</span><span class="spanish">estar permitido</span></div>
+                    <div class="vocab-item"><span class="german">gefallen</span><span class="spanish">encantar a alguien</span></div>
+                    <div class="vocab-item"><span class="german">das Jahr</span><span class="spanish">el año</span></div>
+                    <div class="vocab-item"><span class="german">empfehlen</span><span class="spanish">recomendar</span></div>
+                    <div class="vocab-item"><span class="german">hervorragend</span><span class="spanish">excelente</span></div>
+                    <div class="vocab-item"><span class="german">die Rezeption</span><span class="spanish">la recepción</span></div>
+                    <div class="vocab-item"><span class="german">fragen</span><span class="spanish">preguntar algo a alguien</span></div>
+                    <div class="vocab-item"><span class="german">gefallen</span><span class="spanish">gustar a alguien</span></div>
+                    <div class="vocab-item"><span class="german">zu Fuß</span><span class="spanish">a pie</span></div>
+                    <div class="vocab-item"><span class="german">geben</span><span class="spanish">dar algo a alguien</span></div>
+                    <div class="vocab-item"><span class="german">der Bahnhof</span><span class="spanish">la estación</span></div>
+                    <div class="vocab-item"><span class="german">sauber</span><span class="spanish">limpio</span></div>
+                    <div class="vocab-item"><span class="german">erlauben</span><span class="spanish">permitir</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🌎 Argentinien - Landeskunde</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">eine Million</span><span class="spanish">un millón</span></div>
+                    <div class="vocab-item"><span class="german">der Einwohner</span><span class="spanish">el habitante</span></div>
+                    <div class="vocab-item"><span class="german">die Industrie</span><span class="spanish">la industria</span></div>
+                    <div class="vocab-item"><span class="german">die Region</span><span class="spanish">la región</span></div>
+                    <div class="vocab-item"><span class="german">der Tourismus</span><span class="spanish">el turismo</span></div>
+                    <div class="vocab-item"><span class="german">der Wasserfall</span><span class="spanish">la catarata</span></div>
+                    <div class="vocab-item"><span class="german">die Welt</span><span class="spanish">el mundo</span></div>
+                    <div class="vocab-item"><span class="german">der Gletscher</span><span class="spanish">el glaciar</span></div>
+                    <div class="vocab-item"><span class="german">sogar</span><span class="spanish">incluso</span></div>
+                    <div class="vocab-item"><span class="german">der Sommer</span><span class="spanish">el verano</span></div>
+                    <div class="vocab-item"><span class="german">die Wirtschaft</span><span class="spanish">la economía</span></div>
+                    <div class="vocab-item"><span class="german">die Viehzucht</span><span class="spanish">la ganadería</span></div>
+                    <div class="vocab-item"><span class="german">die Landwirtschaft</span><span class="spanish">la agricultura</span></div>
+                    <div class="vocab-item"><span class="german">die Produktion</span><span class="spanish">la producción</span></div>
+                    <div class="vocab-item"><span class="german">der Wein</span><span class="spanish">el vino</span></div>
+                    <div class="vocab-item"><span class="german">die Hauptstadt</span><span class="spanish">la capital</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider">
+            <div class="section-title">🔗 Konnektoren und Textbausteine</div>
+            <p>Wichtige Verbindungswörter für die Textproduktion und Analyse</p>
+        </div>
+
+        <div class="vocab-grid">
+
+        <div class="vocab-grid">
+            <div class="vocab-card">
+                <div class="vocab-category">➡️ Argumentative Konnektoren</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">außerdem</span><span class="spanish">además</span></div>
+                    <div class="vocab-item"><span class="german">jedoch</span><span class="spanish">sin embargo</span></div>
+                    <div class="vocab-item"><span class="german">trotzdem</span><span class="spanish">no obstante</span></div>
+                    <div class="vocab-item"><span class="german">deshalb</span><span class="spanish">por eso</span></div>
+                    <div class="vocab-item"><span class="german">folglich</span><span class="spanish">por consiguiente</span></div>
+                    <div class="vocab-item"><span class="german">einerseits</span><span class="spanish">por una parte</span></div>
+                    <div class="vocab-item"><span class="german">andererseits</span><span class="spanish">por otra parte</span></div>
+                    <div class="vocab-item"><span class="german">im Gegenteil</span><span class="spanish">al contrario</span></div>
+                    <div class="vocab-item"><span class="german">zusammenfassend</span><span class="spanish">en resumen</span></div>
+                    <div class="vocab-item"><span class="german">meiner Meinung nach</span><span class="spanish">en mi opinión</span></div>
+                    <div class="vocab-item"><span class="german">beispielsweise</span><span class="spanish">por ejemplo</span></div>
+                    <div class="vocab-item"><span class="german">das heißt</span><span class="spanish">es decir</span></div>
+                    <div class="vocab-item"><span class="german">zunächst</span><span class="spanish">en primer lugar</span></div>
+                    <div class="vocab-item"><span class="german">schließlich</span><span class="spanish">finalmente</span></div>
+                    <div class="vocab-item"><span class="german">obwohl</span><span class="spanish">aunque</span></div>
+                    <div class="vocab-item"><span class="german">während</span><span class="spanish">mientras que</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">💭 Meinungsäußerung</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">ich denke</span><span class="spanish">pienso que</span></div>
+                    <div class="vocab-item"><span class="german">ich glaube</span><span class="spanish">creo que</span></div>
+                    <div class="vocab-item"><span class="german">ich bin der Ansicht</span><span class="spanish">considero que</span></div>
+                    <div class="vocab-item"><span class="german">ich stimme zu</span><span class="spanish">estoy de acuerdo</span></div>
+                    <div class="vocab-item"><span class="german">ich bin dagegen</span><span class="spanish">estoy en contra</span></div>
+                    <div class="vocab-item"><span class="german">es ist wichtig</span><span class="spanish">es importante</span></div>
+                    <div class="vocab-item"><span class="german">es ist notwendig</span><span class="spanish">es necesario</span></div>
+                    <div class="vocab-item"><span class="german">es ist möglich</span><span class="spanish">es posible</span></div>
+                    <div class="vocab-item"><span class="german">es ist unmöglich</span><span class="spanish">es imposible</span></div>
+                    <div class="vocab-item"><span class="german">zweifelsohne</span><span class="spanish">sin duda</span></div>
+                    <div class="vocab-item"><span class="german">offensichtlich</span><span class="spanish">obviamente</span></div>
+                    <div class="vocab-item"><span class="german">wahrscheinlich</span><span class="spanish">probablemente</span></div>
+                    <div class="vocab-item"><span class="german">möglicherweise</span><span class="spanish">posiblemente</span></div>
+                    <div class="vocab-item"><span class="german">hoffentlich</span><span class="spanish">ojalá</span></div>
+                    <div class="vocab-item"><span class="german">leider</span><span class="spanish">desgraciadamente</span></div>
+                    <div class="vocab-item"><span class="german">glücklicherweise</span><span class="spanish">afortunadamente</span></div>
+                </div>
+            </div>
+
+            <div class="vocab-card">
+                <div class="vocab-category">🎯 Häufige Redewendungen</div>
+                <div class="vocab-list">
+                    <div class="vocab-item"><span class="german">Hunger haben</span><span class="spanish">tener hambre</span></div>
+                    <div class="vocab-item"><span class="german">Durst haben</span><span class="spanish">tener sed</span></div>
+                    <div class="vocab-item"><span class="german">Angst haben</span><span class="spanish">tener miedo</span></div>
+                    <div class="vocab-item"><span class="german">Recht haben</span><span class="spanish">tener razón</span></div>
+                    <div class="vocab-item"><span class="german">Glück haben</span><span class="spanish">tener suerte</span></div>
+                    <div class="vocab-item"><span class="german">es eilig haben</span><span class="spanish">tener prisa</span></div>
+                    <div class="vocab-item"><span class="german">vermissen</span><span class="spanish">echar de menos</span></div>
+                    <div class="vocab-item"><span class="german">sich bewusst werden</span><span class="spanish">darse cuenta de</span></div>
+                    <div class="vocab-item"><span class="german">traurig werden</span><span class="spanish">ponerse triste</span></div>
+                    <div class="vocab-item"><span class="german">wütend werden</span><span class="spanish">ponerse enfadado</span></div>
+                    <div class="vocab-item"><span class="german">sich freuen</span><span class="spanish">alegrarse</span></div>
+                    <div class="vocab-item"><span class="german">sich ärgern</span><span class="spanish">enfadarse</span></div>
+                    <div class="vocab-item"><span class="german">sich irren</span><span class="spanish">equivocarse</span></div>
+                    <div class="vocab-item"><span class="german">sich erinnern</span><span class="spanish">acordarse de</span></div>
+                    <div class="vocab-item"><span class="german">sich entscheiden</span><span class="spanish">decidirse</span></div>
+                    <div class="vocab-item"><span class="german">Bescheid wissen</span><span class="spanish">estar al tanto</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div class="quiz-modal" id="quizModal">
+        <div class="quiz-content">
+            <h3 class="quiz-question" id="quizQuestion">Übersetze:</h3>
+            <input type="text" class="quiz-input" id="quizInput" placeholder="Deine Antwort...">
+            <div class="quiz-buttons">
+                <button class="quiz-submit" onclick="checkAnswer()">Prüfen</button>
+                <button class="quiz-cancel" onclick="closeQuiz()">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <script>
+        let vocabulary = [];
+        let learnedWords = new Set();
+        let currentMode = 'learn'; // 'learn' or 'quiz'
+        let currentQuizWord = null;
+        
+        // Sammle alle Vokabeln aus den Karten
+        function collectVocabulary() {
+            const vocabItems = document.querySelectorAll('.vocab-item');
+            vocabulary = [];
+            vocabItems.forEach(item => {
+                const german = item.querySelector('.german').textContent;
+                const spanish = item.querySelector('.spanish').textContent;
+                vocabulary.push({ german, spanish });
+            });
+            updateProgress();
+        }
+        
+        // Fortschritt aktualisieren
+        function updateProgress() {
+            const totalCount = vocabulary.length;
+            const learnedCount = learnedWords.size;
+            const progressPercent = totalCount > 0 ? (learnedCount / totalCount) * 100 : 0;
+            
+            document.getElementById('totalCount').textContent = totalCount;
+            document.getElementById('learnedCount').textContent = learnedCount;
+            document.getElementById('progressFill').style.width = progressPercent + '%';
+        }
+        
+        // Suchfunktion
+        function setupSearch() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const vocabItems = document.querySelectorAll('.vocab-item');
+                
+                vocabItems.forEach(item => {
+                    const german = item.querySelector('.german').textContent.toLowerCase();
+                    const spanish = item.querySelector('.spanish').textContent.toLowerCase();
+                    
+                    if (german.includes(searchTerm) || spanish.includes(searchTerm)) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = searchTerm === '' ? 'flex' : 'none';
+                    }
+                });
+                
+                // Verstecke leere Karten
+                const vocabCards = document.querySelectorAll('.vocab-card');
+                vocabCards.forEach(card => {
+                    const visibleItems = card.querySelectorAll('.vocab-item:not([style*="none"])');
+                    card.style.display = visibleItems.length > 0 || searchTerm === '' ? 'block' : 'none';
+                });
+            });
+        }
+        
+        // Vokabel als gelernt markieren
+        function markAsLearned(word) {
+            learnedWords.add(word);
+            updateProgress();
+            localStorage.setItem('learnedSpanishWords', JSON.stringify([...learnedWords]));
+            
+            // Visuelles Feedback
+            const vocabItems = document.querySelectorAll('.vocab-item');
+            vocabItems.forEach(item => {
+                if (item.querySelector('.german').textContent === word) {
+                    item.classList.add('learned');
+                }
+            });
+        }
+        
+        // Gelernte Wörter laden
+        function loadLearnedWords() {
+            const saved = localStorage.getItem('learnedSpanishWords');
+            if (saved) {
+                learnedWords = new Set(JSON.parse(saved));
+                // Markiere gelernte Wörter visuell
+                const vocabItems = document.querySelectorAll('.vocab-item');
+                vocabItems.forEach(item => {
+                    const german = item.querySelector('.german').textContent;
+                    if (learnedWords.has(german)) {
+                        item.classList.add('learned');
+                    }
+                });
+            }
+        }
+        
+        // Notification anzeigen
+        function showNotification(message, type = 'info') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = `notification ${type}`;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Random Quiz starten
+        function startRandomQuiz() {
+            if (vocabulary.length === 0) {
+                showNotification('Keine Vokabeln gefunden!', 'error');
+                return;
+            }
+            
+            const randomWord = vocabulary[Math.floor(Math.random() * vocabulary.length)];
+            currentQuizWord = randomWord;
+            
+            document.getElementById('quizQuestion').textContent = `Übersetze: ${randomWord.german}`;
+            document.getElementById('quizInput').value = '';
+            document.getElementById('quizModal').style.display = 'flex';
+            document.getElementById('quizInput').focus();
+        }
+        
+        // Quiz schließen
+        function closeQuiz() {
+            document.getElementById('quizModal').style.display = 'none';
+            currentQuizWord = null;
+        }
+        
+        // Antwort prüfen
+        function checkAnswer() {
+            const userAnswer = document.getElementById('quizInput').value.trim();
+            if (!userAnswer) {
+                showNotification('Bitte gib eine Antwort ein!', 'error');
+                return;
+            }
+            
+            if (!currentQuizWord) return;
+            
+            // Normalisiere Antworten für Vergleich
+            const correctAnswer = currentQuizWord.spanish.toLowerCase().trim();
+            const userAnswerNormalized = userAnswer.toLowerCase().trim();
+            
+            // Akzeptiere auch alternative Antworten (getrennt durch /)
+            const possibleAnswers = correctAnswer.split('/').map(ans => ans.trim());
+            const isCorrect = possibleAnswers.some(ans => ans === userAnswerNormalized);
+            
+            if (isCorrect) {
+                showNotification('Richtig! 🎉', 'success');
+                markAsLearned(currentQuizWord.german);
+            } else {
+                showNotification(`Falsch! Die richtige Antwort ist: ${currentQuizWord.spanish}`, 'error');
+            }
+            
+            closeQuiz();
+        }
+        
+        // Modus wechseln
+        function toggleMode() {
+            currentMode = currentMode === 'learn' ? 'quiz' : 'learn';
+            const modeIndicator = document.getElementById('modeIndicator');
+            
+            if (currentMode === 'learn') {
+                modeIndicator.textContent = 'Modus: Lernen';
+                showNotification('Lernmodus aktiviert - Klicke auf Vokabeln um sie als gelernt zu markieren', 'info');
+                
+                // Entferne Quiz-Mode Klassen
+                document.querySelectorAll('.vocab-item').forEach(item => {
+                    item.classList.remove('quiz-mode');
+                });
+            } else {
+                modeIndicator.textContent = 'Modus: Abfragen';
+                showNotification('Abfrage-Modus aktiviert - Klicke auf Vokabeln um dich selbst zu testen', 'info');
+                
+                // Füge Quiz-Mode Klassen hinzu
+                document.querySelectorAll('.vocab-item').forEach(item => {
+                    item.classList.add('quiz-mode');
+                });
+            }
+        }
+        
+        // Einzelne Vokabel abfragen
+        function quizSingleWord(german, spanish) {
+            currentQuizWord = { german, spanish };
+            document.getElementById('quizQuestion').textContent = `Übersetze: ${german}`;
+            document.getElementById('quizInput').value = '';
+            document.getElementById('quizModal').style.display = 'flex';
+            document.getElementById('quizInput').focus();
+        }
+        
+        // Enter-Taste im Quiz-Input
+        function setupQuizInput() {
+            document.getElementById('quizInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    checkAnswer();
+                }
+            });
+            
+            // ESC zum Schließen
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && document.getElementById('quizModal').style.display === 'flex') {
+                    closeQuiz();
+                }
+            });
+        }
+        
+        // Initialisierung
+        document.addEventListener('DOMContentLoaded', function() {
+            collectVocabulary();
+            loadLearnedWords();
+            setupSearch();
+            setupQuizInput();
+            updateProgress();
+            
+            // Klick-Handler für Vokabeln
+            document.querySelectorAll('.vocab-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const german = this.querySelector('.german').textContent;
+                    const spanish = this.querySelector('.spanish').textContent;
+                    
+                    if (currentMode === 'learn') {
+                        markAsLearned(german);
+                        showNotification(`"${german}" als gelernt markiert!`, 'success');
+                    } else {
+                        quizSingleWord(german, spanish);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textanalyse - Spanisch Abitur 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .nav-links {
+            margin: 20px 0;
+        }
+        
+        .nav-links a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            transform: translateY(-2px);
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .subsection {
+            margin-bottom: 25px;
+        }
+        
+        .subsection h3 {
+            font-size: 1.3em;
+            color: #764ba2;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0.1), transparent);
+            padding: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .method-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .method-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .example-box {
+            background: rgba(255, 107, 107, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #ff6b6b;
+        }
+        
+        .spanish-term {
+            font-style: italic;
+            color: #ee5a24;
+            font-weight: bold;
+        }
+        
+        .checklist {
+            background: rgba(46, 204, 113, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .checklist h4 {
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+        
+        .checklist ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .checklist li {
+            margin: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .vocab-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .vocab-table th,
+        .vocab-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .vocab-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .vocab-table tr:nth-child(even) {
+            background-color: rgba(102, 126, 234, 0.05);
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-title {
+                font-size: 2em;
+            }
+            
+            .nav-links a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="header-title">📖 Textanalyse</h1>
+            <p>Methoden zur systematischen Analyse spanischer Texte für das Abitur</p>
+            
+            <div class="nav-links">
+                <a href="index.html">🏠 Startseite</a>
+                <a href="grammatik.html">📚 Grammatik</a>
+                <a href="wortschatz.html">💬 Wortschatz</a>
+                <a href="textproduktion.html">✍️ Textproduktion</a>
+            </div>
+        </header>
+
+        <div class="content-section">
+            <h2 class="section-title">🎯 Grundlagen der Textanalyse</h2>
+            
+            <div class="subsection">
+                <h3>1. Erste Textbegegnung (<span class="spanish-term">Primera lectura</span>)</h3>
+                
+                <div class="method-box">
+                    <div class="method-title">Überblickslesung - <span class="spanish-term">Lectura global</span></div>
+                    <p><strong>Ziel:</strong> Ersten Gesamteindruck gewinnen und grundlegende Informationen erfassen</p>
+                    
+                    <div class="checklist">
+                        <h4>Folgende Fragen stellen:</h4>
+                        <ul>
+                            <li><span class="spanish-term">¿De qué tipo de texto se trata?</span> (Um welche Textart handelt es sich?)</li>
+                            <li><span class="spanish-term">¿Cuál es el tema central?</span> (Was ist das zentrale Thema?)</li>
+                            <li><span class="spanish-term">¿Quién es el autor/narrador?</span> (Wer ist der Autor/Erzähler?)</li>
+                            <li><span class="spanish-term">¿Cuándo y dónde tiene lugar la acción?</span> (Wann und wo findet die Handlung statt?)</li>
+                            <li><span class="spanish-term">¿Cuál es la intención del autor?</span> (Was ist die Absicht des Autors?)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>2. Textarten erkennen (<span class="spanish-term">Tipos de texto</span>)</h3>
+                
+                <div class="two-column">
+                    <div class="method-box">
+                        <div class="method-title">Literarische Texte - <span class="spanish-term">Textos literarios</span></div>
+                        <ul>
+                            <li><strong><span class="spanish-term">Novela</span></strong> - Roman (längere Erzählung, komplexe Handlung)</li>
+                            <li><strong><span class="spanish-term">Cuento</span></strong> - Erzählung/Kurzgeschichte (kurze, prägnante Handlung)</li>
+                            <li><strong><span class="spanish-term">Drama</span></strong> - Drama (Bühnenstück mit Dialogen)</li>
+                            <li><strong><span class="spanish-term">Poesía</span></strong> - Lyrik (Gedichte mit Rhythmus und Reim)</li>
+                            <li><strong><span class="spanish-term">Ensayo</span></strong> - Essay (persönliche Reflexion über ein Thema)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="method-box">
+                        <div class="method-title">Pragmatische Texte - <span class="spanish-term">Textos pragmáticos</span></div>
+                        <ul>
+                            <li><strong><span class="spanish-term">Artículo periodístico</span></strong> - Zeitungsartikel</li>
+                            <li><strong><span class="spanish-term">Editorial</span></strong> - Leitartikel</li>
+                            <li><strong><span class="spanish-term">Reportaje</span></strong> - Reportage</li>
+                            <li><strong><span class="spanish-term">Entrevista</span></strong> - Interview</li>
+                            <li><strong><span class="spanish-term">Carta</span></strong> - Brief</li>
+                            <li><strong><span class="spanish-term">Anuncio publicitario</span></strong> - Werbeanzeige</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">🔍 Detailanalyse</h2>
+            
+            <div class="subsection">
+                <h3>3. Strukturanalyse (<span class="spanish-term">Análisis estructural</span>)</h3>
+                
+                <div class="method-box">
+                    <div class="method-title">Gliederung - <span class="spanish-term">Estructura del texto</span></div>
+                    
+                    <div class="example-box">
+                        <strong>Typische Struktur eines argumentativen Textes:</strong>
+                        <ol>
+                            <li><span class="spanish-term">Introducción</span> - Einleitung (Thema einführen)</li>
+                            <li><span class="spanish-term">Desarrollo/Argumentación</span> - Hauptteil (Argumente entwickeln)</li>
+                            <li><span class="spanish-term">Conclusión</span> - Schluss (Zusammenfassung, Fazit)</li>
+                        </ol>
+                    </div>
+                    
+                    <p><strong>Analysefragen:</strong></p>
+                    <ul>
+                        <li><span class="spanish-term">¿Cómo está estructurado el texto?</span> (Wie ist der Text strukturiert?)</li>
+                        <li><span class="spanish-term">¿Cuántos párrafos tiene y qué función cumple cada uno?</span> (Wie viele Absätze hat er und welche Funktion erfüllt jeder?)</li>
+                        <li><span class="spanish-term">¿Hay una progresión lógica en las ideas?</span> (Gibt es eine logische Progression der Ideen?)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>4. Stilmittel (<span class="spanish-term">Recursos estilísticos</span>)</h3>
+                
+                <table class="vocab-table">
+                    <thead>
+                        <tr>
+                            <th>Stilmittel</th>
+                            <th>Spanisch</th>
+                            <th>Definition</th>
+                            <th>Beispiel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Metapher</td>
+                            <td><span class="spanish-term">Metáfora</span></td>
+                            <td>Bildlicher Vergleich ohne "wie"</td>
+                            <td><span class="spanish-term">"Sus ojos son dos estrellas"</span></td>
+                        </tr>
+                        <tr>
+                            <td>Vergleich</td>
+                            <td><span class="spanish-term">Símil</span></td>
+                            <td>Vergleich mit "como", "cual"</td>
+                            <td><span class="spanish-term">"Blanco como la nieve"</span></td>
+                        </tr>
+                        <tr>
+                            <td>Personifikation</td>
+                            <td><span class="spanish-term">Personificación</span></td>
+                            <td>Vermenschlichung von Objekten</td>
+                            <td><span class="spanish-term">"El viento susurra"</span></td>
+                        </tr>
+                        <tr>
+                            <td>Hyperbel</td>
+                            <td><span class="spanish-term">Hipérbole</span></td>
+                            <td>Übertreibung</td>
+                            <td><span class="spanish-term">"Te lo he dicho mil veces"</span></td>
+                        </tr>
+                        <tr>
+                            <td>Ironie</td>
+                            <td><span class="spanish-term">Ironía</span></td>
+                            <td>Gegenteil des Gemeinten</td>
+                            <td><span class="spanish-term">"¡Qué día tan hermoso!" (bei Regen)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Anapher</td>
+                            <td><span class="spanish-term">Anáfora</span></td>
+                            <td>Wiederholung am Satzanfang</td>
+                            <td><span class="spanish-term">"No pasarán... No pasarán..."</span></td>
+                        </tr>
+                        <tr>
+                            <td>Alliteration</td>
+                            <td><span class="spanish-term">Aliteración</span></td>
+                            <td>Wiederholung von Anfangslauten</td>
+                            <td><span class="spanish-term">"Tres tristes tigres"</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="subsection">
+                <h3>5. Sprachliche Analyse (<span class="spanish-term">Análisis lingüístico</span>)</h3>
+                
+                <div class="two-column">
+                    <div class="method-box">
+                        <div class="method-title">Wortschatz - <span class="spanish-term">Vocabulario</span></div>
+                        <ul>
+                            <li><span class="spanish-term">Registro formal/informal</span> - Formelle/informelle Sprachebene</li>
+                            <li><span class="spanish-term">Tecnicismos</span> - Fachbegriffe</li>
+                            <li><span class="spanish-term">Coloquialismos</span> - Umgangssprache</li>
+                            <li><span class="spanish-term">Campos semánticos</span> - Wortfelder</li>
+                            <li><span class="spanish-term">Connotaciones</span> - Bedeutungsebenen</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="method-box">
+                        <div class="method-title">Satzbau - <span class="spanish-term">Sintaxis</span></div>
+                        <ul>
+                            <li><span class="spanish-term">Oraciones simples/complejas</span> - Einfache/komplexe Sätze</li>
+                            <li><span class="spanish-term">Subordinación/coordinación</span> - Unterordnung/Nebenordnung</li>
+                            <li><span class="spanish-term">Uso del subjuntivo</span> - Verwendung des Subjunktivs</li>
+                            <li><span class="spanish-term">Tiempos verbales</span> - Zeitformen</li>
+                            <li><span class="spanish-term">Modalidad</span> - Modalität</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">📝 Argumentationsanalyse</h2>
+            
+            <div class="subsection">
+                <h3>6. Argumentationsstrukturen (<span class="spanish-term">Estructuras argumentativas</span>)</h3>
+                
+                <div class="method-box">
+                    <div class="method-title">Arten von Argumenten - <span class="spanish-term">Tipos de argumentos</span></div>
+                    
+                    <div class="example-box">
+                        <strong>Klassifikation nach Stärke:</strong>
+                        <ul>
+                            <li><span class="highlight">Argumento de autoridad</span> - Autoritätsargument (Experten zitieren)</li>
+                            <li><span class="highlight">Argumento empírico</span> - Empirisches Argument (Fakten, Statistiken)</li>
+                            <li><span class="highlight">Argumento analógico</span> - Analogieargument (Vergleiche ziehen)</li>
+                            <li><span class="highlight">Argumento emocional</span> - Emotionales Argument (Gefühle ansprechen)</li>
+                            <li><span class="highlight">Argumento de experiencia</span> - Erfahrungsargument (persönliche Erlebnisse)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="method-box">
+                    <div class="method-title">Konnektoren - <span class="spanish-term">Conectores argumentativos</span></div>
+                    
+                    <table class="vocab-table">
+                        <thead>
+                            <tr>
+                                <th>Funktion</th>
+                                <th>Spanische Konnektoren</th>
+                                <th>Deutsche Bedeutung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hinzufügung</td>
+                                <td><span class="spanish-term">además, también, asimismo, por añadidura</span></td>
+                                <td>außerdem, auch, ebenso, zusätzlich</td>
+                            </tr>
+                            <tr>
+                                <td>Kontrast</td>
+                                <td><span class="spanish-term">sin embargo, no obstante, por el contrario, en cambio</span></td>
+                                <td>jedoch, dennoch, im Gegenteil, dagegen</td>
+                            </tr>
+                            <tr>
+                                <td>Ursache</td>
+                                <td><span class="spanish-term">porque, ya que, puesto que, debido a</span></td>
+                                <td>weil, da, aufgrund von</td>
+                            </tr>
+                            <tr>
+                                <td>Folge</td>
+                                <td><span class="spanish-term">por tanto, por consiguiente, así que, de modo que</span></td>
+                                <td>daher, folglich, so dass</td>
+                            </tr>
+                            <tr>
+                                <td>Beispiel</td>
+                                <td><span class="spanish-term">por ejemplo, como por ejemplo, tal como</span></td>
+                                <td>zum Beispiel, wie zum Beispiel</td>
+                            </tr>
+                            <tr>
+                                <td>Schlussfolgerung</td>
+                                <td><span class="spanish-term">en conclusión, para concluir, en resumen</span></td>
+                                <td>zusammenfassend, abschließend</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">👥 Charakterisierung</h2>
+            
+            <div class="subsection">
+                <h3>7. Figurenanalyse (<span class="spanish-term">Análisis de personajes</span>)</h3>
+                
+                <div class="method-box">
+                    <div class="method-title">Charakterisierungstechniken</div>
+                    
+                    <div class="two-column">
+                        <div>
+                            <h4><span class="spanish-term">Caracterización directa</span> - Direkte Charakterisierung</h4>
+                            <ul>
+                                <li>Explizite Beschreibung durch den Erzähler</li>
+                                <li>Selbstbeschreibung der Figur</li>
+                                <li>Beschreibung durch andere Figuren</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4><span class="spanish-term">Caracterización indirecta</span> - Indirekte Charakterisierung</h4>
+                            <ul>
+                                <li>Handlungen der Figur</li>
+                                <li>Sprache und Dialoge</li>
+                                <li>Gedanken und Gefühle</li>
+                                <li>Reaktionen anderer Figuren</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="checklist">
+                    <h4>Analysefragen für Charakterisierung:</h4>
+                    <ul>
+                        <li><span class="spanish-term">¿Cómo es físicamente el personaje?</span> (Wie sieht die Figur aus?)</li>
+                        <li><span class="spanish-term">¿Cuáles son sus rasgos psicológicos?</span> (Was sind ihre psychologischen Eigenschaften?)</li>
+                        <li><span class="spanish-term">¿Cómo se relaciona con otros personajes?</span> (Wie verhält sie sich zu anderen Figuren?)</li>
+                        <li><span class="spanish-term">¿Qué conflictos internos tiene?</span> (Welche inneren Konflikte hat sie?)</li>
+                        <li><span class="spanish-term">¿Evoluciona a lo largo del texto?</span> (Entwickelt sie sich im Verlauf des Textes?)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">⚖️ Bewertung und Interpretation</h2>
+            
+            <div class="subsection">
+                <h3>8. Interpretation (<span class="spanish-term">Interpretación</span>)</h3>
+                
+                <div class="method-box">
+                    <div class="method-title">Interpretationsschritte</div>
+                    
+                    <ol>
+                        <li><strong><span class="spanish-term">Hipótesis interpretativa</span></strong> - Interpretationshypothese aufstellen</li>
+                        <li><strong><span class="spanish-term">Análisis detallado</span></strong> - Detaillierte Analyse der Textelemente</li>
+                        <li><strong><span class="spanish-term">Contextualización</span></strong> - Einordnung in historischen/kulturellen Kontext</li>
+                        <li><strong><span class="spanish-term">Síntesis interpretativa</span></strong> - Interpretative Synthese</li>
+                        <li><strong><span class="spanish-term">Valoración personal</span></strong> - Persönliche Bewertung</li>
+                    </ol>
+                </div>
+                
+                <div class="example-box">
+                    <strong>Nützliche Wendungen für die Interpretation:</strong>
+                    <ul>
+                        <li><span class="spanish-term">El autor pretende demostrar que...</span> (Der Autor beabsichtigt zu zeigen, dass...)</li>
+                        <li><span class="spanish-term">A través de este texto se puede interpretar que...</span> (Durch diesen Text kann man interpretieren, dass...)</li>
+                        <li><span class="spanish-term">La intención del autor es criticar/defender...</span> (Die Absicht des Autors ist es zu kritisieren/verteidigen...)</li>
+                        <li><span class="spanish-term">Este fragmento refleja la sociedad de la época porque...</span> (Dieses Fragment spiegelt die Gesellschaft der Zeit wider, weil...)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">📋 Prüfungsstrategien</h2>
+            
+            <div class="subsection">
+                <h3>9. Zeitmanagement in der Prüfung</h3>
+                
+                <div class="method-box">
+                    <div class="method-title">Empfohlene Zeitaufteilung (bei 3 Stunden Prüfungszeit)</div>
+                    
+                    <div class="two-column">
+                        <div class="example-box">
+                            <strong>Leseverstehen + Textanalyse (90 Min):</strong>
+                            <ul>
+                                <li>15 Min - Erste Lesung und Aufgabenverständnis</li>
+                                <li>45 Min - Detailanalyse und Notizen</li>
+                                <li>25 Min - Antworten formulieren</li>
+                                <li>5 Min - Überprüfung</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="example-box">
+                            <strong>Textproduktion (90 Min):</strong>
+                            <ul>
+                                <li>10 Min - Brainstorming und Gliederung</li>
+                                <li>65 Min - Schreiben</li>
+                                <li>15 Min - Korrektur und Überarbeitung</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>10. Wichtige Tipps für die Textanalyse</h3>
+                
+                <div class="checklist">
+                    <h4>Do's:</h4>
+                    <ul>
+                        <li>Zitate aus dem Text verwenden und mit Zeilennummern belegen</li>
+                        <li>Fachterminologie auf Spanisch verwenden</li>
+                        <li>Logische Argumentation mit klarer Struktur</li>
+                        <li>Interpretationen begründen</li>
+                        <li>Objektive und subjektive Analyseteile unterscheiden</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box">
+                    <strong>Don'ts:</strong>
+                    <ul>
+                        <li>❌ Nacherzählung statt Analyse</li>
+                        <li>❌ Unbelegte Behauptungen</li>
+                        <li>❌ Zu persönliche Meinungen ohne Textbezug</li>
+                        <li>❌ Grammatikfehler bei wichtigen Fachbegriffen</li>
+                        <li>❌ Unstrukturierte Antworten</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

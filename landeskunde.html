@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landeskunde - Spanisch Abitur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section h3 {
+            color: #34495e;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 8px;
+        }
+        
+        .section h4 {
+            color: #555;
+            font-size: 1.2em;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .info-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border: 1px solid #ffd93d;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .culture-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 15px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .culture-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .country-section {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .country-section h3 {
+            color: white;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .fact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .traditions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .tradition-card {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .tradition-card h4 {
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .literature-timeline {
+            position: relative;
+            margin: 30px 0;
+            padding-left: 30px;
+        }
+        
+        .literature-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+        
+        .timeline-item {
+            position: relative;
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+        }
+        
+        .vocab-section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .vocab-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 15px;
+            background: white;
+            border-radius: 8px;
+            margin: 3px 0;
+        }
+        
+        .spanish-term {
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .german-term {
+            color: #666;
+        }
+        
+        .navigation {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .nav-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .important {
+            background: linear-gradient(135deg, #ff7675, #d63031);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .tip {
+            background: linear-gradient(135deg, #00b894, #00a085);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content-grid,
+            .facts-grid,
+            .traditions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Startseite</a> > 
+                <a href="landeskunde.html">🌍 Landeskunde</a>
+            </div>
+            <h1>🌍 Landeskunde</h1>
+            <p>Kulturelles Wissen über spanischsprachige Länder für das Abitur</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Spanien -->
+            <div class="section">
+                <h2>🇪🇸 Spanien (España)</h2>
+                
+                <div class="country-section">
+                    <h3>Geografische und politische Grundlagen</h3>
+                    <div class="facts-grid">
+                        <div class="fact-item">
+                            <strong>Hauptstadt:</strong> Madrid
+                        </div>
+                        <div class="fact-item">
+                            <strong>Einwohner:</strong> ca. 47 Millionen
+                        </div>
+                        <div class="fact-item">
+                            <strong>Fläche:</strong> 505.990 km²
+                        </div>
+                        <div class="fact-item">
+                            <strong>Regionen:</strong> 17 autonome Gemeinschaften
+                        </div>
+                        <div class="fact-item">
+                            <strong>Sprachen:</strong> Kastilisch, Katalanisch, Galicisch, Baskisch
+                        </div>
+                        <div class="fact-item">
+                            <strong>Staatsform:</strong> Parlamentarische Monarchie
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🏛️ Geschichte Spaniens</h3>
+                <div class="culture-card">
+                    <h4>Wichtige historische Epochen</h4>
+                    <ul>
+                        <li><strong>Al-Andalus (711-1492):</strong> Maurische Herrschaft auf der iberischen Halbinsel</li>
+                        <li><strong>Reconquista (8.-15. Jh.):</strong> Rückeroberung durch christliche Königreiche</li>
+                        <li><strong>Goldenes Zeitalter (16.-17. Jh.):</strong> Spanisches Weltreich und kulturelle Blüte</li>
+                        <li><strong>Bürgerkrieg (1936-1939):</strong> Konflikt zwischen Republik und Nationalisten</li>
+                        <li><strong>Franco-Diktatur (1939-1975):</strong> Autoritäre Herrschaft unter Francisco Franco</li>
+                        <li><strong>Transición (ab 1975):</strong> Übergang zur Demokratie nach Francos Tod</li>
+                        <li><strong>EU-Beitritt (1986):</strong> Integration in die Europäische Gemeinschaft</li>
+                    </ul>
+                </div>
+
+                <h3>🎭 Kultur und Traditionen</h3>
+                <div class="traditions-grid">
+                    <div class="tradition-card">
+                        <h4>🎉 Fiestas</h4>
+                        <p><strong>Las Fallas (Valencia):</strong> März, riesige Figuren werden verbrannt</p>
+                        <p><strong>La Tomatina (Buñol):</strong> August, Tomatenschlacht</p>
+                        <p><strong>San Fermín (Pamplona):</strong> Juli, Stierlauf</p>
+                        <p><strong>Feria de Abril (Sevilla):</strong> April, Frühlingsfest mit Flamenco</p>
+                    </div>
+                    <div class="tradition-card">
+                        <h4>🥘 Gastronomie</h4>
+                        <p><strong>Tapas:</strong> Kleine Häppchen, soziales Essen</p>
+                        <p><strong>Paella:</strong> Reisgericht aus Valencia</p>
+                        <p><strong>Jamón ibérico:</strong> Luftgetrockneter Schinken</p>
+                        <p><strong>Gazpacho:</strong> Kalte Gemüsesuppe aus Andalusien</p>
+                    </div>
+                    <div class="tradition-card">
+                        <h4>💃 Flamenco</h4>
+                        <p><strong>Ursprung:</strong> Andalusien, Roma-Kultur</p>
+                        <p><strong>Elemente:</strong> Gesang (cante), Tanz (baile), Gitarre (toque)</p>
+                        <p><strong>Bedeutung:</strong> UNESCO-Weltkulturerbe seit 2010</p>
+                    </div>
+                    <div class="tradition-card">
+                        <h4>🏟️ Stierkampf</h4>
+                        <p><strong>Tradition:</strong> Seit dem 18. Jahrhundert</p>
+                        <p><strong>Kontroverse:</strong> Tierrechts- vs. Kulturdebatte</p>
+                        <p><strong>Verbote:</strong> In Katalonien seit 2012 verboten</p>
+                    </div>
+                </div>
+
+                <h3>🏛️ Autonome Gemeinschaften</h3>
+                <div class="content-grid">
+                    <div class="info-box">
+                        <h4>🏛️ Katalanien (Cataluña)</h4>
+                        <p><strong>Hauptstadt:</strong> Barcelona</p>
+                        <p><strong>Sprache:</strong> Katalanisch und Kastilisch</p>
+                        <p><strong>Besonderheiten:</strong> Wirtschaftszentrum, Unabhängigkeitsbewegung, Modernisme-Architektur (Gaudí)</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>🌊 Galicien (Galicia)</h4>
+                        <p><strong>Hauptstadt:</strong> Santiago de Compostela</p>
+                        <p><strong>Sprache:</strong> Galicisch und Kastilisch</p>
+                        <p><strong>Besonderheiten:</strong> Jakobsweg, keltische Kultur, Fischereitradition</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>🏔️ Baskenland (País Vasco)</h4>
+                        <p><strong>Hauptstadt:</strong> Vitoria-Gasteiz</p>
+                        <p><strong>Sprache:</strong> Baskisch (Euskera) und Kastilisch</p>
+                        <p><strong>Besonderheiten:</strong> Einzigartige Sprache und Kultur, hohe Autonomie</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>☀️ Andalusien (Andalucía)</h4>
+                        <p><strong>Hauptstadt:</strong> Sevilla</p>
+                        <p><strong>Besonderheiten:</strong> Maurische Architektur, Flamenco, Olivenanbau, Küste</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lateinamerika -->
+            <div class="section">
+                <h2>🌎 Lateinamerika</h2>
+                
+                <div class="country-section">
+                    <h3>Überblick</h3>
+                    <div class="facts-grid">
+                        <div class="fact-item">
+                            <strong>Länder:</strong> 19 spanischsprachige Länder
+                        </div>
+                        <div class="fact-item">
+                            <strong>Bevölkerung:</strong> über 400 Millionen Menschen
+                        </div>
+                        <div class="fact-item">
+                            <strong>Sprachen:</strong> Spanisch, indigene Sprachen
+                        </div>
+                        <div class="fact-item">
+                            <strong>Religion:</strong> Mehrheitlich katholisch
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🗺️ Wichtige Länder und Regionen</h3>
+                <div class="content-grid">
+                    <div class="info-box">
+                        <h4>🇲🇽 Mexiko</h4>
+                        <p><strong>Hauptstadt:</strong> Ciudad de México</p>
+                        <p><strong>Kultur:</strong> Präkolumbische Zivilisationen (Maya, Azteken), Día de los Muertos</p>
+                        <p><strong>Gesellschaft:</strong> NAFTA/USMCA, Migration in die USA</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>🇦🇷 Argentinien</h4>
+                        <p><strong>Hauptstadt:</strong> Buenos Aires</p>
+                        <p><strong>Kultur:</strong> Tango, Literatur (Borges), Fußball</p>
+                        <p><strong>Wirtschaft:</strong> Rindfleisch, Wein, Soja</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>🇨🇱 Chile</h4>
+                        <p><strong>Hauptstadt:</strong> Santiago</p>
+                        <p><strong>Geografie:</strong> Lange Küste, Atacama-Wüste, Anden</p>
+                        <p><strong>Geschichte:</strong> Pinochet-Diktatur (1973-1990)</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>🇨🇴 Kolumbien</h4>
+                        <p><strong>Hauptstadt:</strong> Bogotá</p>
+                        <p><strong>Kultur:</strong> Kaffee, Gabriel García Márquez, Vallenato</p>
+                        <p><strong>Herausforderungen:</strong> Drogenhandel, bewaffnete Gruppen</p>
+                    </div>
+                </div>
+
+                <h3>🏛️ Gesellschaftliche Themen</h3>
+                <div class="culture-card">
+                    <h4>Soziale Herausforderungen</h4>
+                    <ul>
+                        <li><strong>Ungleichheit:</strong> Große Einkommensunterschiede zwischen Arm und Reich</li>
+                        <li><strong>Migration:</strong> Binnenmigration vom Land in die Stadt, Migration in die USA</li>
+                        <li><strong>Indigene Völker:</strong> Kampf um Landrechte und kulturelle Erhaltung</li>
+                        <li><strong>Gewalt:</strong> Drogenkriminalität, Femizide, politische Gewalt</li>
+                        <li><strong>Umwelt:</strong> Abholzung, Bergbau, Klimawandel</li>
+                        <li><strong>Bildung:</strong> Ungleicher Zugang zu Bildung</li>
+                        <li><strong>Korruption:</strong> Politische und wirtschaftliche Korruption</li>
+                    </ul>
+                </div>
+
+                <div class="important">
+                    <h4>⚠️ Abitur-relevant: Aktuelle Themen</h4>
+                    <ul>
+                        <li>Migration und ihre Ursachen</li>
+                        <li>Rolle der Frau in der lateinamerikanischen Gesellschaft</li>
+                        <li>Umweltzerstörung und Klimawandel</li>
+                        <li>Digitalisierung und soziale Medien</li>
+                        <li>Jugendarbeitslosigkeit</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Literatur und Kunst -->
+            <div class="section">
+                <h2>📚 Literatur und Kunst</h2>
+                
+                <h3>Wichtige Autoren und Werke</h3>
+                <div class="literature-timeline">
+                    <div class="timeline-item">
+                        <h4>Miguel de Cervantes (1547-1616)</h4>
+                        <p><strong>Werk:</strong> "Don Quijote de la Mancha" (1605/1615)</p>
+                        <p><strong>Bedeutung:</strong> Begründer des modernen Romans, Satire auf Ritterromane</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Federico García Lorca (1898-1936)</h4>
+                        <p><strong>Werke:</strong> "Bodas de sangre", "La casa de Bernarda Alba"</p>
+                        <p><strong>Stil:</strong> Generación del 27, lyrisches Theater</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Gabriel García Márquez (1927-2014)</h4>
+                        <p><strong>Werk:</strong> "Cien años de soledad" (1967)</p>
+                        <p><strong>Stil:</strong> Magischer Realismus, Nobelpreis 1982</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Isabel Allende (*1942)</h4>
+                        <p><strong>Werk:</strong> "La casa de los espíritus" (1982)</p>
+                        <p><strong>Themen:</strong> Familiengeschichte, politische Verfolgung in Chile</p>
+                    </div>
+                </div>
+
+                <h3>🎨 Kunst und Architektur</h3>
+                <div class="content-grid">
+                    <div class="info-box">
+                        <h4>🏛️ Antoni Gaudí (1852-1926)</h4>
+                        <p><strong>Stil:</strong> Modernisme, organische Formen</p>
+                        <p><strong>Werke:</strong> Sagrada Família, Park Güell, Casa Milà</p>
+                        <p><strong>Einfluss:</strong> UNESCO-Welterbe, Symbol Barcelonas</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>🎨 Pablo Picasso (1881-1973)</h4>
+                        <p><strong>Stil:</strong> Kubismus, Blaue/Rosa Periode</p>
+                        <p><strong>Werke:</strong> "Guernica" (1937), "Les Demoiselles d'Avignon"</p>
+                        <p><strong>Bedeutung:</strong> Revolutionierte die moderne Kunst</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>🎭 Salvador Dalí (1904-1989)</h4>
+                        <p><strong>Stil:</strong> Surrealismus</p>
+                        <p><strong>Werke:</strong> "Die Beständigkeit der Erinnerung"</p>
+                        <p><strong>Besonderheit:</strong> Exzentrische Persönlichkeit, Museum in Figueres</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>🏛️ Mudejar-Architektur</h4>
+                        <p><strong>Stil:</strong> Mischung aus christlicher und islamischer Architektur</p>
+                        <p><strong>Beispiele:</strong> Alcázar von Sevilla, Aljafería in Saragossa</p>
+                        <p><strong>Zeitraum:</strong> 12.-16. Jahrhundert</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wichtiger Wortschatz -->
+            <div class="section">
+                <h2>📝 Wichtiger Landeskunde-Wortschatz</h2>
+                
+                <div class="vocab-section">
+                    <h3>🏛️ Politik und Gesellschaft</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <span class="spanish-term">la monarquía parlamentaria</span>
+                            <span class="german-term">die parlamentarische Monarchie</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">la comunidad autónoma</span>
+                            <span class="german-term">die autonome Gemeinschaft</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">la dictadura</span>
+                            <span class="german-term">die Diktatur</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">la transición</span>
+                            <span class="german-term">der Übergang (zur Demokratie)</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">la desigualdad</span>
+                            <span class="german-term">die Ungleichheit</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">la migración</span>
+                            <span class="german-term">die Migration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vocab-section">
+                    <h3>🎭 Kultur und Traditionen</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <span class="spanish-term">las tradiciones</span>
+                            <span class="german-term">die Traditionen</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">las fiestas</span>
+                            <span class="german-term">die Feste</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">el patrimonio cultural</span>
+                            <span class="german-term">das Kulturerbe</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">la tauromaquia</span>
+                            <span class="german-term">der Stierkampf</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">la gastronomía</span>
+                            <span class="german-term">die Gastronomie</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">el mestizaje</span>
+                            <span class="german-term">die Rassenmischung</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vocab-section">
+                    <h3>🌍 Geografie und Umwelt</h3>
+                    <div class="vocab-grid">
+                        <div class="vocab-item">
+                            <span class="spanish-term">la cordillera</span>
+                            <span class="german-term">die Gebirgskette</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">la selva tropical</span>
+                            <span class="german-term">der tropische Regenwald</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">la deforestación</span>
+                            <span class="german-term">die Abholzung</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">el cambio climático</span>
+                            <span class="german-term">der Klimawandel</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">la biodiversidad</span>
+                            <span class="german-term">die Biodiversität</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">los recursos naturales</span>
+                            <span class="german-term">die natürlichen Ressourcen</span>
+                        </div>
+                        <div class="vocab-item">
+                            <span class="spanish-term">la minería</span>
+                            <span class="german-term">der Bergbau</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prüfungstipps -->
+            <div class="section">
+                <h2>🎯 Prüfungstipps für Landeskunde</h2>
+                
+                <div class="tip">
+                    <h4>💡 Tipps für die Abiturprüfung</h4>
+                    <ul>
+                        <li><strong>Aktuelle Bezüge:</strong> Verknüpfe historische Ereignisse mit aktuellen Entwicklungen</li>
+                        <li><strong>Vergleiche:</strong> Stelle Unterschiede und Gemeinsamkeiten zwischen Spanien und Lateinamerika dar</li>
+                        <li><strong>Konkrete Beispiele:</strong> Nenne immer spezifische Beispiele für abstrakte Konzepte</li>
+                        <li><strong>Problembewusstsein:</strong> Zeige Verständnis für gesellschaftliche Herausforderungen</li>
+                        <li><strong>Kulturelle Sensibilität:</strong> Vermeide Stereotypen und zeige differenzierte Sichtweisen</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>📋 Häufige Prüfungsthemen</h4>
+                    <ul>
+                        <li>Migration zwischen Lateinamerika und Spanien/USA</li>
+                        <li>Rolle der Frau in traditionellen vs. modernen Gesellschaften</li>
+                        <li>Auswirkungen der Kolonialisierung</li>
+                        <li>Regionalismus vs. Zentralismus in Spanien</li>
+                        <li>Umweltprobleme und nachhaltige Entwicklung</li>
+                        <li>Jugend und soziale Medien</li>
+                        <li>Tourismus und seine Auswirkungen</li>
+                    </ul>
+                </div>
+
+                <div class="culture-card">
+                    <h4>📚 Texttypen mit Landeskunde-Bezug</h4>
+                    <ul>
+                        <li><strong>Zeitungsartikel:</strong> Aktuelle gesellschaftliche Themen</li>
+                        <li><strong>Literarische Texte:</strong> Kulturelle und historische Hintergründe</li>
+                        <li><strong>Statistiken:</strong> Demografische und sozioökonomische Daten</li>
+                        <li><strong>Interviews:</strong> Persönliche Erfahrungen mit kulturellen Themen</li>
+                        <li><strong>Blogbeiträge:</strong> Jugendliche Perspektiven auf gesellschaftliche Entwicklungen</li>
+                    </ul>
+                </div>
+
+                <div class="important">
+                    <h4>⚠️ Häufige Fehler vermeiden</h4>
+                    <ul>
+                        <li>Nicht alle lateinamerikanischen Länder über einen Kamm scheren</li>
+                        <li>Spanien nicht nur auf Flamenco und Stierkampf reduzieren</li>
+                        <li>Moderne Entwicklungen neben traditionellen Aspekten erwähnen</li>
+                        <li>Soziale Medien und Globalisierung als Einflussfaktoren berücksichtigen</li>
+                        <li>Unterschiede zwischen verschiedenen Generationen beachten</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Zusätzliche Themen -->
+            <div class="section">
+                <h2>🌟 Vertiefungsthemen für das Abitur</h2>
+                
+                <h3>👥 Gesellschaftliche Entwicklungen</h3>
+                <div class="content-grid">
+                    <div class="info-box">
+                        <h4>🏠 Familienstrukturen</h4>
+                        <p><strong>Traditionell:</strong> Großfamilie, patriarchale Strukturen</p>
+                        <p><strong>Modern:</strong> Kleinfamilie, berufstätige Frauen, späte Familiengründung</p>
+                        <p><strong>Herausforderungen:</strong> Work-Life-Balance, Kinderbetreuung</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>🎓 Bildungssystem</h4>
+                        <p><strong>Spanien:</strong> Dezentralisiert, autonome Kompetenzen</p>
+                        <p><strong>Lateinamerika:</strong> Große Qualitätsunterschiede, Privatschulen vs. öffentliche Schulen</p>
+                        <p><strong>Probleme:</strong> Schulabbruch, ungleicher Zugang</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>💼 Arbeitswelt</h4>
+                        <p><strong>Jugendarbeitslosigkeit:</strong> Besonders hoch in Spanien</p>
+                        <p><strong>Informeller Sektor:</strong> Weit verbreitet in Lateinamerika</p>
+                        <p><strong>Emigration:</strong> Brain Drain, Fachkräftemangel</p>
+                    </div>
+                    <div class="info-box">
+                        <h4>📱 Digitalisierung</h4>
+                        <p><strong>Social Media:</strong> Einfluss auf Jugendkultur und Politik</p>
+                        <p><strong>Digital Divide:</strong> Ungleicher Zugang zu Technologie</p>
+                        <p><strong>Neue Medien:</strong> Veränderung der Kommunikation</p>
+                    </div>
+                </div>
+
+                <h3>🌍 Globalisierung und Identität</h3>
+                <div class="culture-card">
+                    <h4>Spannungsfelder der Moderne</h4>
+                    <ul>
+                        <li><strong>Tradition vs. Moderne:</strong> Bewahrung kultureller Identität bei Modernisierung</li>
+                        <li><strong>Global vs. Lokal:</strong> Globalisierung vs. regionale Besonderheiten</li>
+                        <li><strong>Sprache:</strong> Spanisch als Weltsprache vs. indigene Sprachen</li>
+                        <li><strong>Religion:</strong> Säkularisierung vs. traditionelle Religiosität</li>
+                        <li><strong>Konsum:</strong> Amerikanisierung vs. lokale Traditionen</li>
+                        <li><strong>Umwelt:</strong> Wirtschaftswachstum vs. Nachhaltigkeit</li>
+                    </ul>
+                </div>
+
+                <h3>🎨 Zeitgenössische Kultur</h3>
+                <div class="traditions-grid">
+                    <div class="tradition-card">
+                        <h4>🎵 Musik</h4>
+                        <p><strong>Pop Latino:</strong> Ricky Martin, Shakira, Jesse & Joy</p>
+                        <p><strong>Rock en Español:</strong> Manu Chao, Jarabe de Palo</p>
+                        <p><strong>Reggaeton:</strong> Daddy Yankee, Bad Bunny</p>
+                        <p><strong>Fusion:</strong> Mischung traditioneller und moderner Stile</p>
+                    </div>
+                    <div class="tradition-card">
+                        <h4>🎬 Film</h4>
+                        <p><strong>Spanien:</strong> Pedro Almodóvar, Alejandro Amenábar</p>
+                        <p><strong>Mexiko:</strong> Alejandro González Iñárritu, Guillermo del Toro</p>
+                        <p><strong>Themen:</strong> Migration, Identität, soziale Probleme</p>
+                    </div>
+                    <div class="tradition-card">
+                        <h4>📺 Medien</h4>
+                        <p><strong>Telenovelas:</strong> Einfluss auf Lateinamerika</p>
+                        <p><strong>Reality TV:</strong> Neue Formate aus Spanien</p>
+                        <p><strong>Streaming:</strong> Netflix-Serien auf Spanisch</p>
+                    </div>
+                    <div class="tradition-card">
+                        <h4>⚽ Sport</h4>
+                        <p><strong>Fußball:</strong> Kulturelle Bedeutung, Real Madrid, FC Barcelona</p>
+                        <p><strong>Tennis:</strong> Rafael Nadal als spanisches Symbol</p>
+                        <p><strong>Andere:</strong> Basketball, Handball in Spanien</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Methodische Hinweise -->
+            <div class="section">
+                <h2>📖 Methodische Hinweise für Textarbeit</h2>
+                
+                <div class="culture-card">
+                    <h4>🔍 Textanalyse mit Landeskunde-Bezug</h4>
+                    <ol>
+                        <li><strong>Kontext erschließen:</strong> Historische, geografische, soziale Einordnung</li>
+                        <li><strong>Kulturelle Codes erkennen:</strong> Implizite Bedeutungen, Anspielungen</li>
+                        <li><strong>Vergleiche ziehen:</strong> Mit deutschen/europäischen Verhältnissen</li>
+                        <li><strong>Perspektiven berücksichtigen:</strong> Wer spricht? Aus welcher Sicht?</li>
+                        <li><strong>Aktualität bewerten:</strong> Bezug zu heutigen Entwicklungen</li>
+                    </ol>
+                </div>
+
+                <div class="tip">
+                    <h4>💭 Textproduktion mit Landeskunde</h4>
+                    <ul>
+                        <li><strong>Comentario personal:</strong> Eigene fundierte Meinung zu kulturellen Themen</li>
+                        <li><strong>Análisis:</strong> Systematische Untersuchung kultureller Phänomene</li>
+                        <li><strong>Resumen:</strong> Wichtige kulturelle Informationen zusammenfassen</li>
+                        <li><strong>Mediación:</strong> Kulturelle Vermittlung zwischen den Sprachen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="index.html" class="nav-button">🏠 Zur Übersicht</a>
+            </div>
+    </div>
+
+    <script>
+        // Smooth scroll für bessere UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Interaktive Elemente
+        document.querySelectorAll('.culture-card, .info-box, .tradition-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px)';
+                this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+            });
+        });
+
+        // Vokabel-Interaktion
+        document.querySelectorAll('.vocab-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('highlighted');
+                this.style.backgroundColor = this.style.backgroundColor === 'rgb(102, 126, 234)' ? 'white' : '#667eea';
+                this.style.color = this.style.color === 'white' ? '#333' : 'white';
+            });
+        });
+
+        // Fortschritts-Tracking
+        function markSectionComplete(sectionId) {
+            const completedSections = JSON.parse(localStorage.getItem('completedSections') || '[]');
+            if (!completedSections.includes(sectionId)) {
+                completedSections.push(sectionId);
+                localStorage.setItem('completedSections', JSON.stringify(completedSections));
+            }
+        }
+
+        // Automatisches Markieren beim Scrollen
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id || entry.target.querySelector('h2').textContent;
+                    markSectionComplete(sectionId);
+                }
+            });
+        });
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

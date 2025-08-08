@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanische Grammatik - Abitur Lernzettel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+        }
+        
+        header {
+            grid-column: 1 / -1;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-breadcrumb {
+            text-align: left;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+        
+        .nav-breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-breadcrumb a:hover {
+            color: #764ba2;
+        }
+        
+        .header-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+        
+        .sidebar h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar li {
+            margin-bottom: 8px;
+        }
+        
+        .nav-link {
+            display: block;
+            color: #555;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+        
+        .nav-link:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .grammar-section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .section-title {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .subsection {
+            margin-bottom: 25px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .subsection-title {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 8px;
+        }
+        
+        .rule-box {
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        .rule-box h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+        
+        .verb-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .verb-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .verb-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .verb-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .example-box {
+            background: #e8f5e8;
+            border: 2px solid #4caf50;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .example-box h4 {
+            color: #2e7d32;
+            margin-bottom: 12px;
+        }
+        
+        .example-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #c8e6c9;
+        }
+        
+        .example-item:last-child {
+            border-bottom: none;
+        }
+        
+        .spanish {
+            font-weight: bold;
+            color: #c62828;
+            flex: 1;
+        }
+        
+        .german {
+            color: #1565c0;
+            font-style: italic;
+            flex: 1;
+            text-align: right;
+        }
+        
+        .memory-tip {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .memory-tip h4 {
+            color: #e65100;
+            margin-bottom: 8px;
+        }
+        
+        .irregular-verb {
+            background: #fce4ec;
+            border: 1px solid #e91e63;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        
+        .pronoun-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .pronoun-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .progress-tracker {
+            background: linear-gradient(135deg, #4caf50, #66bb6a);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .progress-tracker:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: none;
+        }
+        
+        .back-to-top:hover {
+            background: #5a67d8;
+            transform: translateY(-3px);
+        }
+        
+        .interactive-quiz {
+            background: #e1f5fe;
+            border: 2px solid #0288d1;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .quiz-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #01579b;
+        }
+        
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .quiz-option {
+            background: white;
+            border: 2px solid #b3e5fc;
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .quiz-option:hover {
+            background: #e1f5fe;
+            border-color: #0288d1;
+        }
+        
+        .quiz-option.correct {
+            background: #c8e6c9;
+            border-color: #4caf50;
+        }
+        
+        .quiz-option.incorrect {
+            background: #ffcdd2;
+            border-color: #f44336;
+        }
+        
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .sidebar {
+                position: static;
+                max-height: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2em;
+            }
+            
+            .pronoun-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .example-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .german {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="nav-breadcrumb">
+                <a href="index.html">🏠 Startseite</a> > 📚 Grammatik
+            </div>
+            <h1 class="header-title">Spanische Grammatik</h1>
+            <p>Vollständige Grammatik-Übersicht für das Spanisch-Abitur Baden-Württemberg</p>
+        </header>
+
+        <div class="sidebar">
+            <h3>📖 Inhaltsverzeichnis</h3>
+            <ul>
+                <li><a href="#sustantivos" class="nav-link">1. Substantive & Artikel</a></li>
+                <li><a href="#adjetivos" class="nav-link">2. Adjektive</a></li>
+                <li><a href="#pronombres" class="nav-link">3. Pronomen</a></li>
+                <li><a href="#verbos-presente" class="nav-link">4. Präsens</a></li>
+                <li><a href="#tiempos-pasado" class="nav-link">5. Vergangenheitszeiten</a></li>
+                <li><a href="#futuro" class="nav-link">6. Zukunft</a></li>
+                <li><a href="#ser-estar" class="nav-link">7. Ser vs. Estar</a></li>
+                <li><a href="#subjuntivo" class="nav-link">8. Subjuntivo</a></li>
+                <li><a href="#imperativo" class="nav-link">9. Imperativo</a></li>
+                <li><a href="#especiales" class="nav-link">10. Besondere Verben</a></li>
+                <li><a href="#oracion" class="nav-link">11. Satzbau</a></li>
+                <li><a href="#prufungstipps" class="nav-link">12. Prüfungstipps</a></li>
+            </ul>
+            
+        </div>
+
+        <div class="main-content">
+            <!-- 1. SUBSTANTIVE UND ARTIKEL -->
+            <section id="sustantivos" class="grammar-section">
+                <h2 class="section-title">📝 1. Los sustantivos y artículos - Substantive und Artikel</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Bestimmte Artikel</h3>
+                    
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Geschlecht</th>
+                                <th>Singular</th>
+                                <th>Plural</th>
+                                <th>Beispiel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Maskulin</td><td>el</td><td>los</td><td>el libro → los libros</td></tr>
+                            <tr><td>Feminin</td><td>la</td><td>las</td><td>la casa → las casas</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="memory-tip">
+                        <h4>💡 Merkhilfe</h4>
+                        <p><strong>Maskulin:</strong> Meist -o Endungen (el chico, el carro)<br>
+                        <strong>Feminin:</strong> Meist -a Endungen (la chica, la mesa)</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Unbestimmte Artikel</h3>
+                    
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Geschlecht</th>
+                                <th>Singular</th>
+                                <th>Plural</th>
+                                <th>Beispiel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Maskulin</td><td>un</td><td>unos</td><td>un libro → unos libros</td></tr>
+                            <tr><td>Feminin</td><td>una</td><td>unas</td><td>una casa → unas casas</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Pluralbildung</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Regeln zur Pluralbildung:</h4>
+                        <p>
+                            • Vokal + <strong>-s</strong>: casa → casas<br>
+                            • Konsonant + <strong>-es</strong>: profesor → profesores<br>
+                            • -z → <strong>-ces</strong>: lápiz → lápices
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. ADJEKTIVE -->
+            <section id="adjetivos" class="grammar-section">
+                <h2 class="section-title">🎨 2. Los adjetivos - Die Adjektive</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Adjektivangleichung</h3>
+                    
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Typ</th>
+                                <th>Maskulin Sing.</th>
+                                <th>Feminin Sing.</th>
+                                <th>Maskulin Plur.</th>
+                                <th>Feminin Plur.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>-o/-a</td><td>alto</td><td>alta</td><td>altos</td><td>altas</td></tr>
+                            <tr><td>Konsonant</td><td>fácil</td><td>fácil</td><td>fáciles</td><td>fáciles</td></tr>
+                            <tr><td>-e</td><td>grande</td><td>grande</td><td>grandes</td><td>grandes</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <h4>Beispiele</h4>
+                        <div class="example-item">
+                            <span class="spanish">El chico alto</span>
+                            <span class="german">(Der große Junge)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">La chica alta</span>
+                            <span class="german">(Das große Mädchen)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Los ejercicios fáciles</span>
+                            <span class="german">(Die einfachen Übungen)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Steigerung</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Komparativ und Superlativ:</h4>
+                        <p>
+                            • <strong>Komparativ:</strong> más/menos + Adjektiv + que<br>
+                            • <strong>Superlativ:</strong> el/la más + Adjektiv<br>
+                            • <strong>Gleichheit:</strong> tan + Adjektiv + como<br>
+                            • <strong>Absoluter Superlativ:</strong> Adjektiv + -ísimo/-a
+                        </p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Beispiele zur Steigerung</h4>
+                        <div class="example-item">
+                            <span class="spanish">María es más alta que Juan</span>
+                            <span class="german">(María ist größer als Juan)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Es la más inteligente de la clase</span>
+                            <span class="german">(Sie ist die intelligenteste der Klasse)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Pedro es tan alto como Luis</span>
+                            <span class="german">(Pedro ist so groß wie Luis)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">La película es interesantísima</span>
+                            <span class="german">(Der Film ist sehr/äußerst interessant)</span>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>Absoluter Superlativ mit -ísimo/-a</h4>
+                        
+                        <table class="verb-table">
+                            <thead>
+                                <tr>
+                                    <th>Grundform</th>
+                                    <th>Superlativ</th>
+                                    <th>Bedeutung</th>
+                                    <th>Besonderheit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>alto</td><td>altísimo</td><td>sehr hoch</td><td>regelmäßig</td></tr>
+                                <tr><td>fácil</td><td>facilísimo</td><td>sehr einfach</td><td>regelmäßig</td></tr>
+                                <tr><td>rico</td><td>riquísimo</td><td>sehr reich/lecker</td><td>c → qu</td></tr>
+                                <tr><td>largo</td><td>larguísimo</td><td>sehr lang</td><td>g → gu</td></tr>
+                                <tr><td>feliz</td><td>felicísimo</td><td>sehr glücklich</td><td>z → c</td></tr>
+                                <tr><td>amable</td><td>amabilísimo</td><td>sehr freundlich</td><td>regelmäßig</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="memory-tip">
+                            <h4>📝 Bildungsregeln für -ísimo:</h4>
+                            <p>
+                                • Adjektive auf <strong>-o/-a</strong>: -o/-a wegstreichen + -ísimo/-a<br>
+                                • Adjektive auf <strong>Konsonant</strong>: direkt + -ísimo/-a<br>
+                                • <strong>c → qu:</strong> rico → riquísimo<br>
+                                • <strong>g → gu:</strong> largo → larguísimo<br>
+                                • <strong>z → c:</strong> feliz → felicísimo
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Adverbien</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Bildung von Adverbien:</h4>
+                        <p>
+                            <strong>Grundregel:</strong> Adjektiv (feminin) + -mente<br>
+                            • rápido → rápida + mente = rápidamente<br>
+                            • fácil → fácil + mente = fácilmente
+                        </p>
+                    </div>
+
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Adjektiv</th>
+                                <th>Femininform</th>
+                                <th>Adverb</th>
+                                <th>Bedeutung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>lento</td><td>lenta</td><td>lentamente</td><td>langsam</td></tr>
+                            <tr><td>rápido</td><td>rápida</td><td>rápidamente</td><td>schnell</td></tr>
+                            <tr><td>fácil</td><td>fácil</td><td>fácilmente</td><td>einfach</td></tr>
+                            <tr><td>especial</td><td>especial</td><td>especialmente</td><td>besonders</td></tr>
+                            <tr><td>normal</td><td>normal</td><td>normalmente</td><td>normalerweise</td></tr>
+                            <tr><td>frecuente</td><td>frecuente</td><td>frecuentemente</td><td>häufig</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <h4>Beispiele mit Adverbien</h4>
+                        <div class="example-item">
+                            <span class="spanish">Habla muy claramente</span>
+                            <span class="german">(Er spricht sehr klar)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Normalmente llego a las ocho</span>
+                            <span class="german">(Normalerweise komme ich um acht an)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Estudia constantemente</span>
+                            <span class="german">(Er lernt ständig)</span>
+                        </div>
+                    </div>
+
+                    <div class="memory-tip">
+                        <h4>⚡ Wichtige unregelmäßige Adverbien</h4>
+                        <p>
+                            • <strong>bien</strong> (gut) ← bueno<br>
+                            • <strong>mal</strong> (schlecht) ← malo<br>
+                            • <strong>mucho</strong> (viel) ← muy + Adjektiv<br>
+                            • <strong>poco</strong> (wenig)<br>
+                            • <strong>mejor</strong> (besser)<br>
+                            • <strong>peor</strong> (schlechter)
+                        </p>
+                    </div>
+
+                    <div class="interactive-quiz">
+                        <div class="quiz-question">🧠 Mini-Quiz: Wie heißt das Adverb von "tranquilo"?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(this, false)">tranquilomente</div>
+                            <div class="quiz-option" onclick="checkAnswer(this, true)">tranquilamente</div>
+                            <div class="quiz-option" onclick="checkAnswer(this, false)">tranquilmente</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. PRONOMEN -->
+            <section id="pronombres" class="grammar-section">
+                <h2 class="section-title">👤 3. Los pronombres - Die Pronomen</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Personalpronomen</h3>
+                    
+                    <div class="pronoun-grid">
+                        <div class="pronoun-card">
+                            <h4>Subjektpronomen</h4>
+                            <table class="verb-table">
+                                <tbody>
+                                    <tr><td>yo</td><td>ich</td></tr>
+                                    <tr><td>tú</td><td>du</td></tr>
+                                    <tr><td>él/ella/usted</td><td>er/sie/Sie</td></tr>
+                                    <tr><td>nosotros/-as</td><td>wir</td></tr>
+                                    <tr><td>vosotros/-as</td><td>ihr</td></tr>
+                                    <tr><td>ellos/ellas/ustedes</td><td>sie/Sie</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="pronoun-card">
+                            <h4>Objektpronomen (direkt)</h4>
+                            <table class="verb-table">
+                                <tbody>
+                                    <tr><td>me</td><td>mich</td></tr>
+                                    <tr><td>te</td><td>dich</td></tr>
+                                    <tr><td>lo/la</td><td>ihn/sie</td></tr>
+                                    <tr><td>nos</td><td>uns</td></tr>
+                                    <tr><td>os</td><td>euch</td></tr>
+                                    <tr><td>los/las</td><td>sie</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="pronoun-card">
+                            <h4>Objektpronomen (indirekt)</h4>
+                            <table class="verb-table">
+                                <tbody>
+                                    <tr><td>me</td><td>mir</td></tr>
+                                    <tr><td>te</td><td>dir</td></tr>
+                                    <tr><td>le</td><td>ihm/ihr/Ihnen</td></tr>
+                                    <tr><td>nos</td><td>uns</td></tr>
+                                    <tr><td>os</td><td>euch</td></tr>
+                                    <tr><td>les</td><td>ihnen/Ihnen</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="memory-tip">
+                        <h4>🎯 Wichtige Regeln</h4>
+                        <p>
+                            <strong>Objektpronomen stehen vor dem konjugierten Verb!</strong><br>
+                            • <em>Lo veo</em> (Ich sehe ihn) - direktes Objekt<br>
+                            • <em>Le doy el libro</em> (Ich gebe ihm das Buch) - indirektes Objekt<br>
+                            • <em>Se lo doy</em> (Ich gebe es ihm) - beide Objekte
+                        </p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Beispiele für Objektpronomen</h4>
+                        <div class="example-item">
+                            <span class="spanish">¿Ves a María? - Sí, la veo</span>
+                            <span class="german">(Siehst du María? - Ja, ich sehe sie)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Le escribo una carta a mi madre</span>
+                            <span class="german">(Ich schreibe meiner Mutter einen Brief)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Nos dan las llaves mañana</span>
+                            <span class="german">(Sie geben uns morgen die Schlüssel)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">¿Le + lo = Se lo regalo</span>
+                            <span class="german">(le/les wird vor lo/la/los/las zu "se")</span>
+                        </div>
+                    </div>
+
+                    <div class="memory-tip">
+                        <h4>⚡ Besonderheit: le/les + lo/la/los/las = se</h4>
+                        <p>
+                            Wenn direktes und indirektes Objektpronomen zusammentreffen,<br>
+                            wird <strong>le/les</strong> zu <strong>se</strong>:<br>
+                            <em>Le doy el libro</em> → <em>Se lo doy</em> (Ich gebe es ihm)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Reflexivpronomen</h3>
+                    
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Person</th>
+                                <th>Pronomen</th>
+                                <th>Beispiel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>yo</td><td>me</td><td>me lavo</td></tr>
+                            <tr><td>tú</td><td>te</td><td>te lavas</td></tr>
+                            <tr><td>él/ella</td><td>se</td><td>se lava</td></tr>
+                            <tr><td>nosotros</td><td>nos</td><td>nos lavamos</td></tr>
+                            <tr><td>vosotros</td><td>os</td><td>os laváis</td></tr>
+                            <tr><td>ellos/ellas</td><td>se</td><td>se lavan</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 4. PRÄSENS -->
+            <section id="verbos-presente" class="grammar-section">
+                <h2 class="section-title">⏰ 4. El presente - Das Präsens</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Regelmäßige Verben</h3>
+                    
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Person</th>
+                                <th>-ar (hablar)</th>
+                                <th>-er (comer)</th>
+                                <th>-ir (vivir)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>yo</td><td>hablo</td><td>como</td><td>vivo</td></tr>
+                            <tr><td>tú</td><td>hablas</td><td>comes</td><td>vives</td></tr>
+                            <tr><td>él/ella/usted</td><td>habla</td><td>come</td><td>vive</td></tr>
+                            <tr><td>nosotros/-as</td><td>hablamos</td><td>comemos</td><td>vivimos</td></tr>
+                            <tr><td>vosotros/-as</td><td>habláis</td><td>coméis</td><td>vivís</td></tr>
+                            <tr><td>ellos/ellas/ustedes</td><td>hablan</td><td>comen</td><td>viven</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Wichtige unregelmäßige Verben</h3>
+                    
+                    <div class="irregular-verb">
+                        <h4>SER (sein - permanent)</h4>
+                        <p>soy, eres, es, somos, sois, son</p>
+                    </div>
+                    
+                    <div class="irregular-verb">
+                        <h4>ESTAR (sein - zustand)</h4>
+                        <p>estoy, estás, está, estamos, estáis, están</p>
+                    </div>
+                    
+                    <div class="irregular-verb">
+                        <h4>TENER (haben)</h4>
+                        <p>tengo, tienes, tiene, tenemos, tenéis, tienen</p>
+                    </div>
+
+                    <div class="interactive-quiz">
+                        <div class="quiz-question">🧠 Mini-Quiz: Konjugiere "hablar" in der 1. Person Singular:</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(this, false)">hablé</div>
+                            <div class="quiz-option" onclick="checkAnswer(this, true)">hablo</div>
+                            <div class="quiz-option" onclick="checkAnswer(this, false)">hablaré</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. VERGANGENHEITSZEITEN -->
+            <section id="tiempos-pasado" class="grammar-section">
+                <h2 class="section-title">⏪ 5. Los tiempos del pasado - Die Vergangenheitszeiten</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Pretérito Indefinido</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Verwendung: Abgeschlossene Handlungen in der Vergangenheit</h4>
+                        <p>Signalwörter: ayer, anoche, el año pasado, hace una semana</p>
+                    </div>
+
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Person</th>
+                                <th>-ar (hablar)</th>
+                                <th>-er/-ir (comer/vivir)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>yo</td><td>hablé</td><td>comí/viví</td></tr>
+                            <tr><td>tú</td><td>hablaste</td><td>comiste/viviste</td></tr>
+                            <tr><td>él/ella/usted</td><td>habló</td><td>comió/vivió</td></tr>
+                            <tr><td>nosotros/-as</td><td>hablamos</td><td>comimos/vivimos</td></tr>
+                            <tr><td>vosotros/-as</td><td>hablasteis</td><td>comisteis/vivisteis</td></tr>
+                            <tr><td>ellos/ellas/ustedes</td><td>hablaron</td><td>comieron/vivieron</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Pretérito Imperfecto</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Verwendung: Gewohnheiten, Beschreibungen, unabgeschlossene Handlungen</h4>
+                        <p>Signalwörter: siempre, todos los días, mientras, cuando</p>
+                    </div>
+
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Person</th>
+                                <th>-ar (hablar)</th>
+                                <th>-er/-ir (comer/vivir)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>yo</td><td>hablaba</td><td>comía/vivía</td></tr>
+                            <tr><td>tú</td><td>hablabas</td><td>comías/vivías</td></tr>
+                            <tr><td>él/ella/usted</td><td>hablaba</td><td>comía/vivía</td></tr>
+                            <tr><td>nosotros/-as</td><td>hablábamos</td><td>comíamos/vivíamos</td></tr>
+                            <tr><td>vosotros/-as</td><td>hablabais</td><td>comíais/vivíais</td></tr>
+                            <tr><td>ellos/ellas/ustedes</td><td>hablaban</td><td>comían/vivían</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="memory-tip">
+                        <h4>🔍 Indefinido vs. Imperfecto</h4>
+                        <p><strong>Indefinido:</strong> Was ist passiert? (einmalig, abgeschlossen)<br>
+                        <strong>Imperfecto:</strong> Was war los? (gewohnheitsmäßig, andauernd)</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Pretérito Perfecto</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Bildung: haber + Partizip Perfekt</h4>
+                        <p>Verwendung: Handlungen mit Bezug zur Gegenwart</p>
+                    </div>
+
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Person</th>
+                                <th>haber</th>
+                                <th>Beispiel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>yo</td><td>he</td><td>he hablado</td></tr>
+                            <tr><td>tú</td><td>has</td><td>has comido</td></tr>
+                            <tr><td>él/ella/usted</td><td>ha</td><td>ha vivido</td></tr>
+                            <tr><td>nosotros/-as</td><td>hemos</td><td>hemos estudiado</td></tr>
+                            <tr><td>vosotros/-as</td><td>habéis</td><td>habéis trabajado</td></tr>
+                            <tr><td>ellos/ellas/ustedes</td><td>han</td><td>han llegado</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <h4>Partizip-Bildung</h4>
+                        <div class="example-item">
+                            <span class="spanish">-ar Verben: -ado (hablado)</span>
+                            <span class="german">(gesprochen)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">-er/-ir Verben: -ido (comido, vivido)</span>
+                            <span class="german">(gegessen, gelebt)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. ZUKUNFT -->
+            <section id="futuro" class="grammar-section">
+                <h2 class="section-title">⏩ 6. El futuro - Die Zukunft</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Futuro Simple</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Bildung: Infinitiv + Futur-Endungen</h4>
+                        <p>-é, -ás, -á, -emos, -éis, -án</p>
+                    </div>
+
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Person</th>
+                                <th>hablar</th>
+                                <th>comer</th>
+                                <th>vivir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>yo</td><td>hablaré</td><td>comeré</td><td>viviré</td></tr>
+                            <tr><td>tú</td><td>hablarás</td><td>comerás</td><td>vivirás</td></tr>
+                            <tr><td>él/ella/usted</td><td>hablará</td><td>comerá</td><td>vivirá</td></tr>
+                            <tr><td>nosotros/-as</td><td>hablaremos</td><td>comeremos</td><td>viviremos</td></tr>
+                            <tr><td>vosotros/-as</td><td>hablaréis</td><td>comeréis</td><td>viviréis</td></tr>
+                            <tr><td>ellos/ellas/ustedes</td><td>hablarán</td><td>comerán</td><td>vivirán</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <h4>Beispiele</h4>
+                        <div class="example-item">
+                            <span class="spanish">Mañana estudiaré para el examen</span>
+                            <span class="german">(Morgen werde ich für die Prüfung lernen)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">¿Podrás venir a la fiesta?</span>
+                            <span class="german">(Wirst du zur Party kommen können?)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Haremos la presentación mañana</span>
+                            <span class="german">(Wir werden die Präsentation morgen machen)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Ir a + Infinitiv (nahe Zukunft)</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Bildung: ir (konjugiert) + a + Infinitiv</h4>
+                        <p>Verwendung: Geplante Handlungen, nahe Zukunft</p>
+                    </div>
+
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Person</th>
+                                <th>ir</th>
+                                <th>Beispiel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>yo</td><td>voy</td><td>voy a estudiar</td></tr>
+                            <tr><td>tú</td><td>vas</td><td>vas a comer</td></tr>
+                            <tr><td>él/ella/usted</td><td>va</td><td>va a trabajar</td></tr>
+                            <tr><td>nosotros/-as</td><td>vamos</td><td>vamos a viajar</td></tr>
+                            <tr><td>vosotros/-as</td><td>vais</td><td>vais a jugar</td></tr>
+                            <tr><td>ellos/ellas/ustedes</td><td>van</td><td>van a llegar</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Condicional Simple</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Bildung: Infinitiv + Imperfekt-Endungen</h4>
+                        <p>-ía, -ías, -ía, -íamos, -íais, -ían</p>
+                    </div>
+
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Person</th>
+                                <th>hablar</th>
+                                <th>comer</th>
+                                <th>vivir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>yo</td><td>hablaría</td><td>comería</td><td>viviría</td></tr>
+                            <tr><td>tú</td><td>hablarías</td><td>comerías</td><td>vivirías</td></tr>
+                            <tr><td>él/ella/usted</td><td>hablaría</td><td>comería</td><td>viviría</td></tr>
+                            <tr><td>nosotros/-as</td><td>hablaríamos</td><td>comeríamos</td><td>viviríamos</td></tr>
+                            <tr><td>vosotros/-as</td><td>hablaríais</td><td>comeríais</td><td>viviríais</td></tr>
+                            <tr><td>ellos/ellas/ustedes</td><td>hablarían</td><td>comerían</td><td>vivirían</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <h4>Verwendung des Condicional</h4>
+                        <div class="example-item">
+                            <span class="spanish">Me gustaría viajar a España</span>
+                            <span class="german">(Ich würde gerne nach Spanien reisen)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">¿Podrías ayudarme?</span>
+                            <span class="german">(Könntest du mir helfen?)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. SER VS. ESTAR -->
+            <section id="ser-estar" class="grammar-section">
+                <h2 class="section-title">⚖️ 7. Ser vs. Estar - Die zwei "sein"-Verben</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">SER - Dauerhafter Zustand</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Verwendung von SER:</h4>
+                        <p>
+                            • Identität: Soy María<br>
+                            • Beruf: Es médico<br>
+                            • Herkunft: Somos de España<br>
+                            • Eigenschaften: Es inteligente<br>
+                            • Zeit: Son las tres<br>
+                            • Material: La mesa es de madera
+                        </p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Beispiele mit SER</h4>
+                        <div class="example-item">
+                            <span class="spanish">Mi hermana es profesora</span>
+                            <span class="german">(Meine Schwester ist Lehrerin)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">La fiesta es en mi casa</span>
+                            <span class="german">(Die Party ist in meinem Haus)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">¿De dónde eres?</span>
+                            <span class="german">(Woher kommst du?)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">ESTAR - Vorübergehender Zustand</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Verwendung von ESTAR:</h4>
+                        <p>
+                            • Ort: Estoy en casa<br>
+                            • Vorübergehender Zustand: Está enfermo<br>
+                            • Gefühle: Estamos contentos<br>
+                            • Verlaufsform: Está comiendo<br>
+                            • Resultat einer Handlung: La puerta está abierta
+                        </p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Beispiele mit ESTAR</h4>
+                        <div class="example-item">
+                            <span class="spanish">¿Cómo estás?</span>
+                            <span class="german">(Wie geht es dir?)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Mi padre está trabajando</span>
+                            <span class="german">(Mein Vater arbeitet gerade)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">La comida está caliente</span>
+                            <span class="german">(Das Essen ist heiß)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Vergleich und häufige Fehler</h3>
+                    
+                    <div class="interactive-quiz">
+                        <div class="quiz-question">🤔 Welches Verb ist richtig?</div>
+                        <p><strong>Mi hermano ___ médico.</strong></p>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(this, true)">es</div>
+                            <div class="quiz-option" onclick="checkAnswer(this, false)">está</div>
+                        </div>
+                    </div>
+
+                    <div class="memory-tip">
+                        <h4>🎯 Eselsbrücke</h4>
+                        <p><strong>SER</strong> = Sache, Eigenschaft, Rasse (dauerhaft)<br>
+                        <strong>ESTAR</strong> = Emotionen, Standort, Temporär, Aktion, Resultat</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. SUBJUNTIVO -->
+            <section id="subjuntivo" class="grammar-section">
+                <h2 class="section-title">🎭 8. El subjuntivo - Der Konjunktiv</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Presente de subjuntivo - Bildung</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Bildung:</h4>
+                        <p>
+                            1. Person Singular Präsens Indikativ als Stamm<br>
+                            • -ar Verben: -e, -es, -e, -emos, -éis, -en<br>
+                            • -er/-ir Verben: -a, -as, -a, -amos, -áis, -an
+                        </p>
+                    </div>
+
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Person</th>
+                                <th>hablar</th>
+                                <th>comer</th>
+                                <th>vivir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>yo</td><td>hable</td><td>coma</td><td>viva</td></tr>
+                            <tr><td>tú</td><td>hables</td><td>comas</td><td>vivas</td></tr>
+                            <tr><td>él/ella/usted</td><td>hable</td><td>coma</td><td>viva</td></tr>
+                            <tr><td>nosotros/-as</td><td>hablemos</td><td>comamos</td><td>vivamos</td></tr>
+                            <tr><td>vosotros/-as</td><td>habléis</td><td>comáis</td><td>viváis</td></tr>
+                            <tr><td>ellos/ellas/ustedes</td><td>hablen</td><td>coman</td><td>vivan</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Verwendung des Subjuntivo</h3>
+                    
+                    <div class="memory-tip">
+                        <h4>🧠 WUDHU-Regel</h4>
+                        <p>
+                            <strong>W</strong>unsch: Quiero que vengas<br>
+                            <strong>U</strong>ngewissheit: Dudo que sea verdad<br>
+                            <strong>D</strong>eutung: Es importante que estudies<br>
+                            <strong>H</strong>ypothese: Es posible que llueva<br>
+                            <strong>U</strong>nbewiesenes: No creo que tenga razón
+                        </p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Subjuntivo-Auslöser</h4>
+                        <div class="example-item">
+                            <span class="spanish">Espero que tengas suerte</span>
+                            <span class="german">(Ich hoffe, dass du Glück hast)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Es necesario que estudies</span>
+                            <span class="german">(Es ist notwendig, dass du lernst)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Cuando llegue, te llamaré</span>
+                            <span class="german">(Wenn ich ankomme, rufe ich dich an)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Wichtige unregelmäßige Formen</h3>
+                    
+                    <div class="irregular-verb">
+                        <h4>SER</h4>
+                        <p>sea, seas, sea, seamos, seáis, sean</p>
+                    </div>
+                    
+                    <div class="irregular-verb">
+                        <h4>ESTAR</h4>
+                        <p>esté, estés, esté, estemos, estéis, estén</p>
+                    </div>
+                    
+                    <div class="irregular-verb">
+                        <h4>TENER</h4>
+                        <p>tenga, tengas, tenga, tengamos, tengáis, tengan</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. IMPERATIVO -->
+            <section id="imperativo" class="grammar-section">
+                <h2 class="section-title">❗ 9. El imperativo - Der Imperativ</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Imperativo afirmativo (Bejahter Imperativ)</h3>
+                    
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Person</th>
+                                <th>-ar (hablar)</th>
+                                <th>-er (comer)</th>
+                                <th>-ir (escribir)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>tú</td><td>habla</td><td>come</td><td>escribe</td></tr>
+                            <tr><td>usted</td><td>hable</td><td>coma</td><td>escriba</td></tr>
+                            <tr><td>nosotros</td><td>hablemos</td><td>comamos</td><td>escribamos</td></tr>
+                            <tr><td>vosotros</td><td>hablad</td><td>comed</td><td>escribid</td></tr>
+                            <tr><td>ustedes</td><td>hablen</td><td>coman</td><td>escriban</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="memory-tip">
+                        <h4>💡 Bildungsregel</h4>
+                        <p><strong>tú-Form:</strong> 3. Person Singular Präsens ohne -s<br>
+                        <strong>Höflichkeitsformen:</strong> Subjuntivo-Formen</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Imperativo negativo (Verneinter Imperativ)</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Bildung: no + Subjuntivo</h4>
+                        <p>Alle Formen verwenden den Subjuntivo!</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Vergleich positiv/negativ</h4>
+                        <div class="example-item">
+                            <span class="spanish">¡Habla más alto! / ¡No hables tan alto!</span>
+                            <span class="german">(Sprich lauter! / Sprich nicht so laut!)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">¡Come la fruta! / ¡No comas dulces!</span>
+                            <span class="german">(Iss das Obst! / Iss keine Süßigkeiten!)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Unregelmäßige Imperativ-Formen</h3>
+                    
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Infinitiv</th>
+                                <th>tú (positiv)</th>
+                                <th>Bedeutung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>decir</td><td>di</td><td>sag</td></tr>
+                            <tr><td>hacer</td><td>haz</td><td>mach</td></tr>
+                            <tr><td>ir</td><td>ve</td><td>geh</td></tr>
+                            <tr><td>poner</td><td>pon</td><td>stell/leg</td></tr>
+                            <tr><td>salir</td><td>sal</td><td>geh raus</td></tr>
+                            <tr><td>ser</td><td>sé</td><td>sei</td></tr>
+                            <tr><td>tener</td><td>ten</td><td>hab</td></tr>
+                            <tr><td>venir</td><td>ven</td><td>komm</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 10. BESONDERE VERBEN -->
+            <section id="especiales" class="grammar-section">
+                <h2 class="section-title">🌟 10. Verbos especiales - Besondere Verben</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Gustar und ähnliche Verben</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Struktur: Pronomen + gustar + Subjekt</h4>
+                        <p>Das Verb richtet sich nach dem Objekt, nicht nach der Person!</p>
+                    </div>
+
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Pronomen</th>
+                                <th>Beispiel (Singular)</th>
+                                <th>Beispiel (Plural)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>me</td><td>me gusta el café</td><td>me gustan los libros</td></tr>
+                            <tr><td>te</td><td>te gusta la música</td><td>te gustan las películas</td></tr>
+                            <tr><td>le</td><td>le gusta estudiar</td><td>le gustan los deportes</td></tr>
+                            <tr><td>nos</td><td>nos gusta viajar</td><td>nos gustan las vacaciones</td></tr>
+                            <tr><td>os</td><td>os gusta la paella</td><td>os gustan los museos</td></tr>
+                            <tr><td>les</td><td>les gusta bailar</td><td>les gustan las fiestas</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <h4>Ähnliche Verben</h4>
+                        <div class="example-item">
+                            <span class="spanish">Me duele la cabeza</span>
+                            <span class="german">(Mir tut der Kopf weh)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Nos interesan los idiomas</span>
+                            <span class="german">(Sprachen interessieren uns)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">¿Te molesta el ruido?</span>
+                            <span class="german">(Stört dich der Lärm?)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Acabar de + Infinitiv</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Bedeutung: "gerade etwas gemacht haben"</h4>
+                        <p>Präsens: gerade eben / Imperfekt: hatte gerade</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Beispiele mit acabar de</h4>
+                        <div class="example-item">
+                            <span class="spanish">Acabo de llegar a casa</span>
+                            <span class="german">(Ich bin gerade zu Hause angekommen)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Acabamos de comer</span>
+                            <span class="german">(Wir haben gerade gegessen)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Cuando llegué, acababa de salir</span>
+                            <span class="german">(Als ich ankam, war er gerade weggegangen)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Saber vs. Conocer vs. Poder</h3>
+                    
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Verb</th>
+                                <th>Bedeutung</th>
+                                <th>Verwendung</th>
+                                <th>Beispiel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>saber</td>
+                                <td>wissen, können (Fähigkeit)</td>
+                                <td>Fakten, erlernbare Fähigkeiten</td>
+                                <td>Sé hablar español</td>
+                            </tr>
+                            <tr>
+                                <td>conocer</td>
+                                <td>kennen</td>
+                                <td>Personen, Orte, durch Erfahrung</td>
+                                <td>Conozco a María</td>
+                            </tr>
+                            <tr>
+                                <td>poder</td>
+                                <td>können (Möglichkeit)</td>
+                                <td>physische/situative Möglichkeit</td>
+                                <td>Puedo venir mañana</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <h4>Vergleich: Saber vs. Conocer vs. Poder</h4>
+                        <div class="example-item">
+                            <span class="spanish">Sé dónde vive María</span>
+                            <span class="german">(Ich weiß, wo María wohnt)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Conozco a María</span>
+                            <span class="german">(Ich kenne María)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">¿Conoces Madrid?</span>
+                            <span class="german">(Kennst du Madrid?)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Sé tocar la guitarra</span>
+                            <span class="german">(Ich kann Gitarre spielen - gelernte Fähigkeit)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Puedo tocar la guitarra ahora</span>
+                            <span class="german">(Ich kann jetzt Gitarre spielen - Möglichkeit)</span>
+                        </div>
+                    </div>
+
+                    <div class="memory-tip">
+                        <h4>🎯 Unterscheidungshilfe</h4>
+                        <p>
+                            <strong>SABER:</strong> Wissen + erlernbare Fähigkeiten (Sprachen, Instrumente)<br>
+                            <strong>CONOCER:</strong> Kennen durch Erfahrung (Personen, Orte)<br>
+                            <strong>PODER:</strong> Können = Möglichkeit/Erlaubnis (physisch, zeitlich, situativ)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Adjektiv vs. Adverb - Wann verwende ich was?</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Unterscheidungsregeln:</h4>
+                        <p>
+                            <strong>Adjektiv:</strong> beschreibt ein Substantiv → <em>¿Cómo es?</em><br>
+                            <strong>Adverb:</strong> beschreibt ein Verb, Adjektiv oder anderes Adverb → <em>¿Cómo?</em>
+                        </p>
+                    </div>
+
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Frage</th>
+                                <th>Verwendet</th>
+                                <th>Beispiel Adjektiv</th>
+                                <th>Beispiel Adverb</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Wie ist...?</td>
+                                <td>Adjektiv</td>
+                                <td>El coche es rápido</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Wie macht er...?</td>
+                                <td>Adverb</td>
+                                <td>-</td>
+                                <td>Conduce rápidamente</td>
+                            </tr>
+                            <tr>
+                                <td>Nach ser/estar</td>
+                                <td>Adjektiv</td>
+                                <td>María está tranquila</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Bei Verben</td>
+                                <td>Adverb</td>
+                                <td>-</td>
+                                <td>Habla tranquilamente</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <h4>Vergleichende Beispiele</h4>
+                        <div class="example-item">
+                            <span class="spanish">La música es alta (Adjektiv)</span>
+                            <span class="german">(Die Musik ist laut)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Habla alto (Adverb)</span>
+                            <span class="german">(Er spricht laut)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Es una persona normal (Adjektiv)</span>
+                            <span class="german">(Sie ist eine normale Person)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Normalmente llega tarde (Adverb)</span>
+                            <span class="german">(Normalerweise kommt er spät)</span>
+                        </div>
+                    </div>
+
+                    <div class="interactive-quiz">
+                        <div class="quiz-question">🤔 Adjektiv oder Adverb? "María canta _____ (beautiful)"</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(this, false)">hermosa</div>
+                            <div class="quiz-option" onclick="checkAnswer(this, true)">hermosamente</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Über das Wetter sprechen</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Grundstrukturen:</h4>
+                        <p>
+                            • <strong>Hacer + Adjektiv:</strong> Hace calor, Hace frío<br>
+                            • <strong>Estar + Adjektiv:</strong> Está nublado, Está soleado<br>
+                            • <strong>Hay + Substantiv:</strong> Hay niebla, Hay tormenta<br>
+                            • <strong>Llover/Nevar:</strong> Llueve, Nieva
+                        </p>
+                    </div>
+
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Spanisch</th>
+                                <th>Deutsch</th>
+                                <th>Struktur</th>
+                                <th>Beispielsatz</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Hace calor</td><td>Es ist warm</td><td>hacer + Substantiv</td><td>Hoy hace mucho calor</td></tr>
+                            <tr><td>Hace frío</td><td>Es ist kalt</td><td>hacer + Substantiv</td><td>En invierno hace frío</td></tr>
+                            <tr><td>Hace sol</td><td>Es ist sonnig</td><td>hacer + Substantiv</td><td>Mañana hará sol</td></tr>
+                            <tr><td>Hace viento</td><td>Es ist windig</td><td>hacer + Substantiv</td><td>Hace mucho viento</td></tr>
+                            <tr><td>Está nublado</td><td>Es ist bewölkt</td><td>estar + Adjektiv</td><td>El cielo está nublado</td></tr>
+                            <tr><td>Está despejado</td><td>Es ist klar</td><td>estar + Adjektiv</td><td>Está completamente despejado</td></tr>
+                            <tr><td>Llueve</td><td>Es regnet</td><td>unpersönlich</td><td>Llueve mucho en abril</td></tr>
+                            <tr><td>Nieva</td><td>Es schneit</td><td>unpersönlich</td><td>En la montaña nieva</td></tr>
+                            <tr><td>Hay niebla</td><td>Es ist neblig</td><td>hay + Substantiv</td><td>Por la mañana hay niebla</td></tr>
+                            <tr><td>Hay tormenta</td><td>Es gewittert</td><td>hay + Substantiv</td><td>Esta noche hay tormenta</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <h4>Wettervorhersage</h4>
+                        <div class="example-item">
+                            <span class="spanish">¿Qué tiempo hace hoy?</span>
+                            <span class="german">(Wie ist das Wetter heute?)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Mañana lloverá por la tarde</span>
+                            <span class="german">(Morgen wird es am Nachmittag regnen)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">En verano hace mucho calor</span>
+                            <span class="german">(Im Sommer ist es sehr heiß)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">La temperatura es de 25 grados</span>
+                            <span class="german">(Die Temperatur beträgt 25 Grad)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Himmelsrichtungen und Orientierung</h3>
+                    
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Himmelsrichtung</th>
+                                <th>Spanisch</th>
+                                <th>Abkürzung</th>
+                                <th>Beispiel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Norden</td><td>el norte</td><td>N</td><td>Vivo en el norte de España</td></tr>
+                            <tr><td>Süden</td><td>el sur</td><td>S</td><td>Sevilla está en el sur</td></tr>
+                            <tr><td>Osten</td><td>el este</td><td>E</td><td>El sol sale por el este</td></tr>
+                            <tr><td>Westen</td><td>el oeste</td><td>O</td><td>El sol se pone por el oeste</td></tr>
+                            <tr><td>Nordosten</td><td>el nordeste</td><td>NE</td><td>Cataluña está en el nordeste</td></tr>
+                            <tr><td>Nordwesten</td><td>el noroeste</td><td>NO</td><td>Galicia está en el noroeste</td></tr>
+                            <tr><td>Südosten</td><td>el sudeste</td><td>SE</td><td>Murcia está en el sudeste</td></tr>
+                            <tr><td>Südwesten</td><td>el suroeste</td><td>SO</td><td>Extremadura está en el suroeste</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="rule-box">
+                        <h4>Präpositionen mit Himmelsrichtungen:</h4>
+                        <p>
+                            • <strong>al norte de:</strong> nördlich von<br>
+                            • <strong>en el norte:</strong> im Norden<br>
+                            • <strong>hacia el norte:</strong> Richtung Norden<br>
+                            • <strong>por el norte:</strong> durch den Norden
+                        </p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Orientierung und Wegbeschreibung</h4>
+                        <div class="example-item">
+                            <span class="spanish">Madrid está en el centro de España</span>
+                            <span class="german">(Madrid liegt im Zentrum Spaniens)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Barcelona está al nordeste de Madrid</span>
+                            <span class="german">(Barcelona liegt nordöstlich von Madrid)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Vamos hacia el sur</span>
+                            <span class="german">(Wir fahren Richtung Süden)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">El viento sopla del norte</span>
+                            <span class="german">(Der Wind weht aus dem Norden)</span>
+                        </div>
+                    </div>
+
+                    <div class="memory-tip">
+                        <h4>🧭 Eselsbrücke für Himmelsrichtungen</h4>
+                        <p>
+                            <strong>NESO:</strong> Norte, Este, Sur, Oeste<br>
+                            (Wie im Deutschen: Norden, Osten, Süden, Westen)<br>
+                            <em>Merksatz: "Never Eat Shredded Onions"</em>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. SATZBAU -->
+            <section id="oracion" class="grammar-section">
+                <h2 class="section-title">🔗 11. La oración - Der Satzbau</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Fragesätze</h3>
+                    
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Fragewort</th>
+                                <th>Spanisch</th>
+                                <th>Beispiel</th>
+                                <th>Deutsche Übersetzung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Was?</td><td>¿Qué?</td><td>¿Qué haces?</td><td>Was machst du?</td></tr>
+                            <tr><td>Wer?</td><td>¿Quién?</td><td>¿Quién es él?</td><td>Wer ist er?</td></tr>
+                            <tr><td>Wo?</td><td>¿Dónde?</td><td>¿Dónde vives?</td><td>Wo wohnst du?</td></tr>
+                            <tr><td>Wohin?</td><td>¿Adónde?</td><td>¿Adónde vas?</td><td>Wohin gehst du?</td></tr>
+                            <tr><td>Wann?</td><td>¿Cuándo?</td><td>¿Cuándo vienes?</td><td>Wann kommst du?</td></tr>
+                            <tr><td>Wie?</td><td>¿Cómo?</td><td>¿Cómo estás?</td><td>Wie geht es dir?</td></tr>
+                            <tr><td>Warum?</td><td>¿Por qué?</td><td>¿Por qué estudias?</td><td>Warum lernst du?</td></tr>
+                            <tr><td>Wie viel?</td><td>¿Cuánto/-a?</td><td>¿Cuánto cuesta?</td><td>Wie viel kostet es?</td></tr>
+                            <tr><td>Wie viele?</td><td>¿Cuántos/-as?</td><td>¿Cuántos años tienes?</td><td>Wie alt bist du?</td></tr>
+                            <tr><td>Welcher?</td><td>¿Cuál?</td><td>¿Cuál prefieres?</td><td>Welches bevorzugst du?</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="example-box">
+                        <h4>Entscheidungsfragen (Ja/Nein-Fragen)</h4>
+                        <div class="example-item">
+                            <span class="spanish">¿Hablas español?</span>
+                            <span class="german">(Sprichst du Spanisch?)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">¿Te gusta la música?</span>
+                            <span class="german">(Gefällt dir die Musik?)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">¿Vienes mañana?</span>
+                            <span class="german">(Kommst du morgen?)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Verneinung</h3>
+                    
+                    <div class="rule-box">
+                        <h4>Grundregel: no + Verb</h4>
+                        <p>Bei Objektpronomen: no + Pronomen + Verb</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Verneinungsbeispiele</h4>
+                        <div class="example-item">
+                            <span class="spanish">No hablo francés</span>
+                            <span class="german">(Ich spreche kein Französisch)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">No lo entiendo</span>
+                            <span class="german">(Ich verstehe es nicht)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">Nunca como carne</span>
+                            <span class="german">(Ich esse nie Fleisch)</span>
+                        </div>
+                    </div>
+
+                    <div class="memory-tip">
+                        <h4>🚫 Verneinungswörter</h4>
+                        <p>
+                            • <strong>no</strong> = nicht<br>
+                            • <strong>nunca</strong> = nie<br>
+                            • <strong>nada</strong> = nichts<br>
+                            • <strong>nadie</strong> = niemand<br>
+                            • <strong>ningún/ninguno</strong> = kein/keiner<br>
+                            • <strong>tampoco</strong> = auch nicht
+                        </p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Präpositionen</h3>
+                    
+                    <table class="verb-table">
+                        <thead>
+                            <tr>
+                                <th>Spanisch</th>
+                                <th>Deutsch</th>
+                                <th>Beispiel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>a</td><td>zu, nach</td><td>Voy a Madrid</td></tr>
+                            <tr><td>de</td><td>von, aus</td><td>Soy de España</td></tr>
+                            <tr><td>en</td><td>in, auf</td><td>Estoy en casa</td></tr>
+                            <tr><td>con</td><td>mit</td><td>Voy con mis amigos</td></tr>
+                            <tr><td>sin</td><td>ohne</td><td>Café sin azúcar</td></tr>
+                            <tr><td>para</td><td>für, um zu</td><td>Estudio para el examen</td></tr>
+                            <tr><td>por</td><td>für, wegen</td><td>Gracias por todo</td></tr>
+                            <tr><td>sobre</td><td>über, auf</td><td>El libro está sobre la mesa</td></tr>
+                            <tr><td>entre</td><td>zwischen</td><td>Entre tú y yo</td></tr>
+                            <tr><td>hasta</td><td>bis</td><td>Hasta mañana</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="memory-tip">
+                        <h4>⚡ POR vs. PARA</h4>
+                        <p>
+                            <strong>POR:</strong> Grund, Ursache, "wegen" → <em>Estudio por necesidad</em><br>
+                            <strong>PARA:</strong> Ziel, Zweck, "für" → <em>Estudio para el examen</em>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. PRÜFUNGSTIPPS -->
+            <section id="prufungstipps" class="grammar-section">
+                <h2 class="section-title">🎯 12. Consejos para el examen - Prüfungstipps</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Häufige Fehlerquellen vermeiden</h3>
+                    
+                    <div class="irregular-verb">
+                        <h4>❌ Typische Fehler:</h4>
+                        <p>
+                            • <strong>Falsche Artikel:</strong> <del>la problema</del> → el problema<br>
+                            • <strong>Ser/Estar verwechselt:</strong> <del>Soy en casa</del> → Estoy en casa<br>
+                            • <strong>Fehlende Präposition a:</strong> <del>Veo María</del> → Veo a María<br>
+                            • <strong>Falsche Pronomenstellung:</strong> <del>Quiero lo</del> → Lo quiero<br>
+                            • <strong>Género vergessen:</strong> <del>uno chica</del> → una chica
+                        </p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Wichtige Eselsbrücken</h3>
+                    
+                    <div class="memory-tip">
+                        <h4>🧠 Merkhilfen für das Abitur</h4>
+                        <p>
+                            • <strong>SER vs. ESTAR:</strong> SER = dauerhaft, ESTAR = vorübergehend<br>
+                            • <strong>POR vs. PARA:</strong> POR = Grund/Ursache, PARA = Ziel/Zweck<br>
+                            • <strong>Indefinido vs. Imperfecto:</strong> Indefinido = abgeschlossen, Imperfecto = gewohnheitsmäßig<br>
+                            • <strong>Subjuntivo:</strong> WUDHU - Wunsch, Ungewissheit, Deutung, Hypothese, Unbewiesenes
+                        </p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Strategien für das Spanisch-Abitur</h3>
+                    
+                    <div class="example-box">
+                        <h4>📚 Grammatik-Lernstrategie</h4>
+                        <div class="example-item">
+                            <span class="spanish">1. Verben systematisch lernen</span>
+                            <span class="german">(Unregelmäßige Verben täglich üben)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">2. Ser/Estar-Unterscheidungen täglich</span>
+                            <span class="german">(Mit konkreten Beispielen üben)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">3. Objektpronomen-Stellung beherrschen</span>
+                            <span class="german">(Vor konjugiertem Verb!)</span>
+                        </div>
+                        <div class="example-item">
+                            <span class="spanish">4. Zeitenbildung regelmäßig wiederholen</span>
+                            <span class="german">(Besonders Subjuntivo und Condicional)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Prüfungsvorbereitung konkret</h3>
+                    
+                    <div class="rule-box">
+                        <h4>✅ Erfolgreiche Vorbereitung:</h4>
+                        <p>
+                            • Erstellen Sie Karteikarten für Verbtabellen<br>
+                            • Üben Sie mit authentischen Texten<br>
+                            • Schreiben Sie eigene Beispielsätze<br>
+                            • Lesen Sie spanische Texte regelmäßig<br>
+                            • Nutzen Sie Online-Konjugationstrainer<br>
+                            • Wiederholen Sie täglich 10-15 Minuten Grammatik
+                        </p>
+                    </div>
+                </div>
+
+                <div class="interactive-quiz">
+                    <div class="quiz-question">🏆 Abschluss-Quiz: Welche Zeit braucht man hier?</div>
+                    <p><strong>"Cuando era pequeño, siempre _____ (jugar) en el parque."</strong></p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="checkAnswer(this, false)">jugué</div>
+                        <div class="quiz-option" onclick="checkAnswer(this, true)">jugaba</div>
+                        <div class="quiz-option" onclick="checkAnswer(this, false)">jugaré</div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="progress-tracker" style="text-align: center; margin: 30px 0;">
+                <h3>🎓 ¡Felicidades! Du hast die komplette Spanisch-Grammatik durchgearbeitet!</h3>
+                <p>Jetzt bist du bereit für das Abitur. ¡Buena suerte!</p>
+                <a href="index.html" style="color: white; text-decoration: none;">🏠 Zurück zur Startseite</a>
+            </div>
+        </div>
+
+        <button class="back-to-top" onclick="scrollToTop()">↑</button>
+    </div>
+
+    <script>
+        // Navigation smooth scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Back to top button
+            const backToTopButton = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+
+            // Progress tracking
+            updateProgressFromStorage();
+        });
+
+        // Quiz functionality
+        function checkAnswer(element, isCorrect) {
+            const options = element.parentNode.querySelectorAll('.quiz-option');
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+                if (option === element) {
+                    if (isCorrect) {
+                        option.classList.add('correct');
+                        option.innerHTML += ' ✅';
+                    } else {
+                        option.classList.add('incorrect');
+                        option.innerHTML += ' ❌';
+                    }
+                } else if (option.onclick.toString().includes('true')) {
+                    option.classList.add('correct');
+                    option.innerHTML += ' ✅';
+                }
+            });
+
+            // Show explanation after 2 seconds
+            setTimeout(() => {
+                if (isCorrect) {
+                    alert('¡Correcto! Sehr gut gemacht! 🎉');
+                } else {
+                    alert('Nicht ganz richtig. Schau dir die Erklärung nochmal an! 📚');
+                }
+            }, 1000);
+        }
+
+        // Progress tracking
+        function updateProgress() {
+            let progress = JSON.parse(localStorage.getItem('spanishGrammarProgress') || '{}');
+            
+            // Simulate progress increment
+            const sections = [
+                'sustantivos', 'adjetivos', 'pronombres', 'verbos-presente', 
+                'tiempos-pasado', 'futuro', 'ser-estar', 'subjuntivo', 
+                'imperativo', 'especiales', 'oracion', 'prufungstipps'
+            ];
+            
+            sections.forEach(section => {
+                if (!progress[section]) {
+                    progress[section] = Math.floor(Math.random() * 50) + 20; // 20-70%
+                } else {
+                    progress[section] = Math.min(100, progress[section] + 10);
+                }
+            });
+
+            localStorage.setItem('spanishGrammarProgress', JSON.stringify(progress));
+            
+            // Show progress notification
+            const totalProgress = Object.values(progress).reduce((a, b) => a + b, 0) / sections.length;
+            alert(`📊 Dein Grammatik-Fortschritt: ${Math.round(totalProgress)}%\n\nWeiter so! Cada día un poco más cerca del éxito! 🎯`);
+        }
+
+        function updateProgressFromStorage() {
+            const progress = JSON.parse(localStorage.getItem('spanishGrammarProgress') || '{}');
+            // Here you could update progress bars if they existed in the UI
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Section highlighting on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.grammar-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.background = '';
+                link.style.color = '';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                    link.style.color = 'white';
+                }
+            });
+        });
+
+        // Print functionality for study purposes
+        function printGrammar() {
+            window.print();
+        }
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'f') {
+                e.preventDefault();
+                const searchTerm = prompt('Suche in der Grammatik:');
+                if (searchTerm) {
+                    const content = document.querySelector('.main-content');
+                    const text = content.innerText.toLowerCase();
+                    if (text.includes(searchTerm.toLowerCase())) {
+                        // Highlight search term (simplified)
+                        window.find(searchTerm);
+                    } else {
+                        alert('Begriff nicht gefunden: ' + searchTerm);
+                    }
+                }
+            }
+        });
+
+        // Study timer (optional feature)
+        let studyStartTime = Date.now();
+        setInterval(() => {
+            const studyTime = Math.floor((Date.now() - studyStartTime) / 60000);
+            if (studyTime > 0 && studyTime % 25 === 0) { // Every 25 minutes
+                if (confirm('⏰ Du lernst schon ' + studyTime + ' Minuten! Zeit für eine kurze Pause?')) {
+                    alert('💪 Kurze Pause! Trink etwas Wasser und komm dann zurück. ¡Descansa un poco!');
+                }
+            }
+        }, 60000); // Check every minute
+    </script>
+</body>
+</html>
